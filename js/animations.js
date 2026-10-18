@@ -54,10 +54,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // =========================================================================
-  // 2. Header Scroll Elevation & Back-to-Top Button
+  // 2. Header Scroll Elevation, Back-to-Top & WhatsApp FAB Scroll Logic
   // =========================================================================
   const siteHeader = document.querySelector('.site-header');
   const backToTopBtn = document.querySelector('.btn-back-to-top');
+  const whatsappFab = document.querySelector('.whatsapp-fab');
+  const heroSection = document.querySelector('.hero-section');
 
   function handleScroll() {
     const scrollY = window.scrollY || window.pageYOffset;
@@ -77,6 +79,16 @@ document.addEventListener('DOMContentLoaded', () => {
         backToTopBtn.classList.add('is-visible');
       } else {
         backToTopBtn.classList.remove('is-visible');
+      }
+    }
+
+    // WhatsApp FAB visibility: appears ONLY when scrolled below the hero section
+    if (whatsappFab) {
+      const heroThreshold = heroSection ? (heroSection.offsetTop + heroSection.offsetHeight - 120) : 450;
+      if (scrollY > heroThreshold) {
+        whatsappFab.classList.add('is-visible');
+      } else {
+        whatsappFab.classList.remove('is-visible');
       }
     }
   }
@@ -207,4 +219,51 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   window.addEventListener('scroll', updateActiveNav, { passive: true });
+
+  // =========================================================================
+  // 7. Direct Email Submission via FormSubmit.co AJAX
+  // =========================================================================
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
+      const originalBtnHtml = submitBtn ? submitBtn.innerHTML : 'Submit Message';
+
+      // Set loading state
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `
+          <svg style="animation: spin 1s linear infinite; width: 18px; height: 18px; display: inline-block; vertical-align: middle; margin-right: 8px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10" stroke-opacity="0.25"></circle>
+            <path d="M12 2a10 10 0 0 1 10 10" stroke-linecap="round"></path>
+          </svg> Sending inquiry...`;
+      }
+
+      const formData = new FormData(contactForm);
+
+      try {
+        const response = await fetch('https://formsubmit.co/ajax/sales@omegatec.com.my', {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json'
+          },
+          body: formData
+        });
+
+        if (response.ok) {
+          window.location.href = 'thank-you.html';
+        } else {
+          const result = await response.json().catch(() => ({}));
+          throw new Error(result.message || 'Submission failed');
+        }
+      } catch (err) {
+        console.error('AJAX form submission error, falling back to native POST:', err);
+        // Fallback: remove onsubmit if any and native POST to FormSubmit
+        contactForm.removeAttribute('onsubmit');
+        contactForm.submit();
+      }
+    });
+  }
 });
