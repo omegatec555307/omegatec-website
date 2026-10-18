@@ -20,6 +20,30 @@
   <!-- Accessible Skip to Content Link (WCAG 2.4.1) -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
+  <!-- Top Global Announcement Bar (WCAG 2.4.1 & Dismissible) -->
+  <aside id="top-announcement" class="top-announcement-bar" role="region" aria-label="Current Promotion Announcement">
+    <div class="announcement-container">
+      <div class="announcement-content">
+        <span class="announcement-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+          </svg>
+          LIMITED PROMO
+        </span>
+        <p class="announcement-text">
+          Refurbished <strong>ASUS ExpertCenter D7</strong> Desktop (i7-12700 / 16GB / 1TB SSD) + 23.8" FHD Monitor Bundle — <strong>Only RM 1,650!</strong>
+        </p>
+        <a href="index.html#promo" class="announcement-cta">View Offer &rarr;</a>
+      </div>
+      <button type="button" class="announcement-close" id="announcement-close-btn" aria-label="Close promotion announcement">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </aside>
+
   <!-- =========================================================================
        Unified Sticky Glass Header
        ========================================================================= -->
@@ -38,6 +62,7 @@
       <!-- Desktop Navigation -->
       <nav class="desktop-nav" aria-label="Primary Navigation">
         <ul class="nav-links">
+          <li><a href="index.html#promo" class="nav-link nav-link-promo">Promo <span class="nav-promo-pill">DEAL</span></a></li>
           <li><a href="index.html#about" class="nav-link">About Us</a></li>
           <li><a href="index.html#services" class="nav-link">Services</a></li>
           <li><a href="index.html#clients" class="nav-link">Clients</a></li>
@@ -58,6 +83,7 @@
   <!-- Mobile Navigation Drawer -->
   <aside id="mobile-drawer" class="mobile-drawer" aria-label="Mobile Navigation">
     <ul class="mobile-nav-links">
+      <li><a href="index.html#promo" class="mobile-nav-link mobile-promo-link">🔥 Current Promo (RM1,650)</a></li>
       <li><a href="index.html#about" class="mobile-nav-link">About Us</a></li>
       <li><a href="index.html#services" class="mobile-nav-link">Services</a></li>
       <li><a href="index.html#clients" class="mobile-nav-link">Clients</a></li>
@@ -73,7 +99,7 @@
   <!-- =========================================================================
        Contact Page Hero with Ambient Blobs
        ========================================================================= -->
-  <section class="hero-section" style="min-height: 380px; padding: calc(var(--header-height) + 48px) 24px 70px;">
+  <section class="hero-section" style="min-height: 380px; padding: calc(var(--header-height) + var(--announcement-height, 0px) + 48px) 24px 70px;">
     <div class="ambient-blob ambient-blob-1" aria-hidden="true"></div>
     <div class="ambient-blob ambient-blob-2" aria-hidden="true"></div>
 
