@@ -1,231 +1,764 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Omegatec Computers Sdn. Bhd. | IT Solutions Malaysia</title>
-<meta name="description" content="Omegatec Computers Sdn. Bhd. provides enterprise IT solutions, networking, cybersecurity, cloud computing, and system development in Malaysia."/>
-<style>
-    :root {
-      --primary: #004080;
-      --secondary: #002b56;
-      --accent: #f39c12;
-      --light: #f9f9f9;
-      /* Sticky heights */
-      --titlebar-height: 96px;
-      --nav-height: 64px;
-    }
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Omegatec Computers Sdn. Bhd. - Premier Malaysian IT solutions provider specializing in hardware sales, networking, cloud computing, cybersecurity, and system development since 2001. MOF Registered & Bumiputera Certified.">
+  <meta name="theme-color" content="#002244">
+  <title>Omegatec Computers Sdn. Bhd. | IT Solutions Malaysia</title>
 
-    body {
-      font-family: 'Segoe UI', Tahoma, sans-serif;
-      margin: 0;
-      line-height: 1.6;
-      color: #333;
-      scroll-behavior: smooth;
-      background: var(--light);
-    }
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    /* ===== Sticky Title Bar (Logo + Title + Tagline) ===== */
-    .titlebar {
-      position: sticky;
-      top: 0;
-      z-index: 1200;
-      background: rgba(0,43,86,0.95);
-      color: #fff;
-      padding: 12px 20px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      backdrop-filter: saturate(120%) blur(2px);
-    }
-    .titlebar .logo img { width: 40px; height: 40px; object-fit: contain; display:block; }
-    .title-text { display: flex; flex-direction: column; }
-    .title-text h1 { margin: 0; font-size: 1.9rem; line-height: 1.2; }
-    .title-text p  { margin: 2px 0 0; opacity: .95; }
-
-    /* ===== Navigation (sticky below titlebar) ===== */
-    nav {
-      background: var(--primary);
-      color: #fff;
-      padding: 0.75rem 1rem;
-      position: sticky;
-      top: var(--titlebar-height);
-      z-index: 1100;
-      display: flex;
-      justify-content: center;
-      gap: 24px;
-    }
-    nav a { color: #fff; text-decoration: none; font-weight: 600; text-transform: uppercase; font-size: .9rem; }
-    nav a:hover { color: var(--accent); }
-
-    /* ===== Hero (visual background behind sticky bars) ===== */
-    header {
-      background: linear-gradient(rgba(0,43,86,0.55), rgba(0,43,86,0.55)),
-                  url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80');
-      background-size: cover; background-position: center; color: white;
-      text-align: center; padding: 80px 20px 20px;
-    }
-
-    /* ===== Sections ===== */
-    section { padding: 80px 10% 40px; max-width: 1200px; margin: auto;
-      scroll-margin-top: calc(var(--titlebar-height) + var(--nav-height) + 16px);
-    }
-    h2 { color: var(--primary); border-bottom: 3px solid var(--accent); display: inline-block; margin-bottom: 30px; }
-
-    /* Services Grid */
-    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-    .card { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-top: 5px solid var(--primary); }
-
-    /* Clients */
-    #clients { background: #fff; text-align: center; padding: 80px 20px; }
-    .client-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 30px; align-items: center; justify-items: center; margin-top: 40px; }
-    .client-emblem { width: 150px; height: 150px; object-fit: contain; filter: grayscale(100%); transition: filter .3s ease, transform .3s ease; }
-    .client-emblem:hover { filter: grayscale(0%); transform: scale(1.08); }
-    .client-card { display: flex; flex-direction: column; align-items: center; }
-    .client-card p { font-size: .9rem; font-weight: 600; color: #555; margin-top: 10px; }
-
-    footer { background: var(--secondary); color: white; text-align: center; padding: 40px 20px; margin-top: 60px; }
-    .footer-content a { color: var(--accent); text-decoration: none; }
-
-    /* ===== Responsive ===== */
-    @media (max-width: 768px) {
-      :root { --titlebar-height: 90px; }
-    }
-    @media (max-width: 480px) {
-      :root { --titlebar-height: 84px; }
-      .titlebar { padding: 10px 14px; }
-      .titlebar .logo img { width: 32px; height: 32px; }
-      .title-text h1 { font-size: 1.4rem; }
-    }
-
-    .logo-link { display:inline-flex; align-items:center; text-decoration:none; }
-    .logo-link:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
-    .logo-link:hover { opacity: 0.95; }
-
-    /* ===== Contact Form Styles ===== */
-    #contact form { background: #fff; padding: 24px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); margin-top: 16px; }
-    #contact .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    #contact .form-field { display: flex; flex-direction: column; margin-bottom: 14px; }
-    #contact label { font-weight: 600; margin-bottom: 6px; color: var(--primary); }
-    #contact input, #contact textarea { border: 1px solid #ccc; border-radius: 6px; padding: 10px 12px; font-size: 1rem; font-family: inherit; }
-    #contact input:focus, #contact textarea:focus { outline: 2px solid var(--accent); border-color: var(--accent); }
-    #contact .form-actions { display: flex; align-items: center; gap: 16px; margin-top: 10px; }
-    #contact button { background: var(--primary); color: #fff; border: none; padding: 12px 18px; border-radius: 6px; cursor: pointer; font-weight: 700; }
-    #contact button:hover { background: var(--secondary); }
-    #contact .form-note { font-size: .9rem; color: #666; margin: 0; }
-    #contact .visually-hidden { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
-    @media (max-width: 768px) { #contact .form-row { grid-template-columns: 1fr; } }
-</style>
+  <!-- Unified Design System Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-<!-- Sticky Title Bar -->
-<div class="titlebar">
-  <a aria-label="Back to top" class="logo-link" href="#">
-    <picture class="logo">
-      <source media="(prefers-color-scheme: dark)" srcset="omega-logo.png"/>
-      <img alt="Omegatec Logo" src="omega-logo.png"/>
-    </picture>
-  </a>
-  <div class="title-text">
-    <h1>Omegatec Computers Sdn. Bhd.</h1>
-    <p>IT Solutions That Transform Your Business</p>
-  </div>
-</div>
 
-<!-- Sticky Navigation -->
-<nav>
-  <a href="#about">About Us</a>
-  <a href="#services">Services</a>
-  <a href="#clients">Clients</a>
-  <a href="#contact">Contact Us</a>
-</nav>
+  <!-- =========================================================================
+       Unified Sticky Glass Header
+       ========================================================================= -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="#" class="brand-link" aria-label="Omegatec Homepage">
+        <div class="brand-logo-wrap">
+          <img src="omega-logo.png" alt="Omegatec Logo">
+        </div>
+        <div class="brand-text-wrap">
+          <span class="brand-title">Omegatec Computers</span>
+          <span class="brand-tagline">The Right Choice</span>
+        </div>
+      </a>
 
-<!-- Visual header / hero -->
-<header></header>
+      <!-- Desktop Navigation -->
+      <nav class="desktop-nav" aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="#about" class="nav-link">About Us</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#clients" class="nav-link">Clients</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <a href="#contact" class="btn-header-cta">Get a Quote</a>
+      </nav>
 
-<!-- Content Sections -->
-<section id="about">
-  <h2>About Us</h2>
-  <p>Omegatec Computers Sdn. Bhd. was established on August 3, 2001, and is based in Malaysia. Our areas of expertise include Computer sales, services, networking & fiber optic solutions, system and app development, website designing, IT consulting; cloud computing services; cybersecurity solutions; infrastructure and database management; artificial intelligence (AI) and machine learning (ML) solutions; and other IT-enabled services. The Company shall also provide consultancy, advisory, and training services in the areas of Information Technology. The company has registered with KEMENTERIAN KEWANGAN MALAYSIA (Ministry of Finance Malaysia), we are committed to delivering innovative IT solutions.</p>
-</section>
-
-<section id="services" style="background:#eee; max-width:100%;">
-  <div style="max-width:1200px; margin:auto;">
-    <h2>Our Services</h2>
-    <div class="services-grid">
-      <div class="card"><h3>Managed IT Services</h3><p>Comprehensive support and infrastructure management.</p></div>
-      <div class="card"><h3>IT Security</h3><p>Advanced cybersecurity and data protection solutions.</p></div>
-      <div class="card"><h3>System Development</h3><p>Custom app and website design for your business.</p></div>
-      <div class="card"><h3>Training &amp; Consultation</h3><p>IT training and expert consulting services.</p></div>
+      <!-- Mobile Hamburger Button -->
+      <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
-  </div>
-</section>
+  </header>
 
-<section id="clients">
-  <h2>Our Prestigious Clients</h2>
-  <p>We are honored to provide IT solutions to Malaysia's leading institutions and government bodies.</p>
-  <div class="client-grid">
-    <div class="client-card"><img alt="Universiti Sains Malaysia" class="client-emblem" src="usm-logo.png"/><p>Universiti Sains Malaysia</p></div>
-    <div class="client-card"><img alt="MBPP" class="client-emblem" src="mbpp-logo.png"/><p>Majlis Bandaraya Pulau Pinang</p></div>
-    <div class="client-card"><img alt="MBSP" class="client-emblem" src="mbsp-logo.png"/><p>Majlis Bandaraya Seberang Jaya</p></div>
-    <div class="client-card"><img alt="Majlis Agama Islam" class="client-emblem" src="mainpp-logo.png"/><p>Majlis Agama Islam Pulau Pinang</p></div>
-    <div class="client-card"><img alt="Penang Development Corporation" class="client-emblem" src="pdc-logo.png"/><p>Penang Development Corporation</p></div>
-    <div class="client-card"><img alt="Consumers Association of Penang" class="client-emblem" src="cap-logo.png"/><p>Consumers Association of Penang</p></div>
-    <div class="client-card"><img alt="Perbadanan Bukit Bendera Pulau Pinang" class="client-emblem" src="pbbpp-logo.png"/><p>Perbadanan Bukit Bendera Pulau Pinang</p></div>
-    <div class="client-card"><img alt="Lembaga Kemajuan Pertanian Muda" class="client-emblem" src="mada-logo.png"/><p>Lembaga Kemajuan Pertanian Muda</p></div>
-    <div class="client-card"><img alt="Hospital Pulau Pinang" class="client-emblem" src="hpp-logo.png"/><p>Hospital Pulau Pinang</p></div>
-    <div class="client-card"><img alt="Perbadanan Perpustakaan Awam Pulau Pinang" class="client-emblem" src="ppapp-logo.png"/><p>Perbadanan Perpustakaan Awam Pulau Pinang</p></div>
-  </div>
-</section>
+  <!-- Mobile Navigation Drawer -->
+  <aside class="mobile-drawer" aria-label="Mobile Navigation">
+    <ul class="mobile-nav-links">
+      <li><a href="#about" class="mobile-nav-link">About Us</a></li>
+      <li><a href="#services" class="mobile-nav-link">Services</a></li>
+      <li><a href="#clients" class="mobile-nav-link">Clients</a></li>
+      <li><a href="#contact" class="mobile-nav-link">Contact Us</a></li>
+    </ul>
+    <a href="#contact" class="mobile-drawer-cta">Request a Quote</a>
+  </aside>
+  <div class="drawer-overlay" aria-hidden="true"></div>
 
-<section id="contact">
-  <h2>Contact Us</h2>
-  <p><strong>Address:</strong> 1-G-45, Taman Sri Pinang, Jalan Veterinari, 10150, Pulau Pinang, Malaysia.<br/>
-  <strong>Tel/Fax:</strong> +604-2811 860 | <strong>Mobile:</strong> +6012-420 9071, +6017-420 1610 | <strong>Email:</strong> <a href="mailto:sales@omegatec.com.my">sales@omegatec.com.my</a></p>
-  <form action="mailto:sales@omegatec.com.my" id="contact-form" method="post" onsubmit="setTimeout(function(){ window.location.href='thank-you.html'; }, 400); return true;">
-    <div class="form-row">
-      <div class="form-field">
-        <label for="name">Name<span aria-hidden="true">*</span></label>
-        <input id="name" name="name" placeholder="Your full name" required="" type="text"/>
+  <!-- =========================================================================
+       Hero Section with Organic Fluid Mesh & Floating Badges
+       ========================================================================= -->
+  <section class="hero-section" id="home">
+    <div class="ambient-blob ambient-blob-1" aria-hidden="true"></div>
+    <div class="ambient-blob ambient-blob-2" aria-hidden="true"></div>
+    <div class="ambient-blob ambient-blob-3" aria-hidden="true"></div>
+
+    <div class="hero-container">
+      <div class="hero-content-wrap">
+        <div class="hero-badge-pill">
+          <span class="pill-dot"></span>
+          MOF Registered &amp; Bumiputera Certified
+        </div>
+        <h1 class="hero-title">
+          Empowering Business with <span class="text-gradient">Innovative IT Solutions</span>
+        </h1>
+        <p class="hero-lead">
+          For over 25 years, Omegatec Computers Sdn. Bhd. has delivered reliable enterprise computer systems, high-speed fiber networking, cybersecurity, cloud infrastructure, and custom software development across Malaysia.
+        </p>
+        <div class="hero-actions">
+          <a href="https://wa.me/60174201610" target="_blank" rel="noopener" class="btn-primary">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+            </svg>
+            Instant WhatsApp Chat
+          </a>
+          <a href="#services" class="btn-secondary">
+            Explore Services
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14"></path>
+              <path d="m12 5 7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
       </div>
-      <div class="form-field">
-        <label for="email">Email<span aria-hidden="true">*</span></label>
-        <input id="email" name="email" placeholder="you@example.com" required="" type="email"/>
-      </div>
-    </div>
-    <div class="form-row">
-      <div class="form-field">
-        <label for="phone">Phone</label>
-        <input id="phone" name="phone" placeholder="+60-1X-XXXXXXX" type="tel"/>
-      </div>
-      <div class="form-field">
-        <label for="subject">Subject<span aria-hidden="true">*</span></label>
-        <input id="subject" name="subject" placeholder="How can we help?" required="" type="text"/>
-      </div>
-    </div>
-    <div class="form-field">
-      <label for="message">Message<span aria-hidden="true">*</span></label>
-      <textarea id="message" name="message" placeholder="Tell us about your project or request..." required="" rows="6"></textarea>
-    </div>
-    <div class="form-actions">
-      <button type="submit">Send Message</button>
-      <p class="form-note">By submitting, you agree to our processing of your information for the purpose of responding to your inquiry.</p>
-      <noscript>After you send the email, please return to the browser and go to thank-you.html to see the confirmation.</noscript>
-    </div>
-  </form>
-  <div aria-live="polite" class="visually-hidden" id="form-status" role="status"></div>
-</section>
 
-<footer>
-  <div class="footer-content">
-    <p>&copy; 2026 Omegatec Computers Sdn. Bhd. <a href="#contact">All Rights Reserved.</a></p>
+      <!-- Hero Floating Badges Showcase -->
+      <div class="hero-visual-card">
+        <div class="glass-badge badge-float-1">
+          <div class="glass-badge-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          </div>
+          <div class="glass-badge-content">
+            <h4>25+ Years Excellence</h4>
+            <p>Established August 3, 2001 in Malaysia</p>
+          </div>
+        </div>
+
+        <div class="glass-badge badge-float-2">
+          <div class="glass-badge-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <div class="glass-badge-content">
+            <h4>Kementerian Kewangan Malaysia</h4>
+            <p>Official MOF Registered Vendor</p>
+          </div>
+        </div>
+
+        <div class="glass-badge badge-float-3">
+          <div class="glass-badge-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+          </div>
+          <div class="glass-badge-content">
+            <h4>100% Bumiputera Status</h4>
+            <p>Trusted Government &amp; Enterprise Partner</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Stats Counter Banner
+       ========================================================================= -->
+  <section class="stats-banner" aria-label="Key Performance Indicators">
+    <div class="stats-container">
+      <div class="stat-item reveal">
+        <div class="stat-number-wrap">
+          <span class="stat-count" data-target="25">0</span>
+          <span class="stat-suffix">+</span>
+        </div>
+        <span class="stat-label">Years of Experience</span>
+      </div>
+
+      <div class="stat-item reveal">
+        <div class="stat-number-wrap">
+          <span class="stat-count" data-target="13">0</span>
+          <span class="stat-suffix">+</span>
+        </div>
+        <span class="stat-label">Premier Institutions</span>
+      </div>
+
+      <div class="stat-item reveal">
+        <div class="stat-number-wrap">
+          <span class="stat-count" data-target="100">0</span>
+          <span class="stat-suffix">%</span>
+        </div>
+        <span class="stat-label">Bumiputera Owned</span>
+      </div>
+
+      <div class="stat-item reveal">
+        <div class="stat-number-wrap">
+          <span class="stat-count" data-target="24">0</span>
+          <span class="stat-suffix">/7</span>
+        </div>
+        <span class="stat-label">Dedicated Support</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       About Us Section
+       ========================================================================= -->
+  <section id="about">
+    <div class="section-container">
+      <div class="about-grid">
+        <div class="about-content reveal">
+          <span class="section-subtitle">Who We Are</span>
+          <h2 class="section-title">Your Trusted Technology Partner in Malaysia</h2>
+          <p>
+            Omegatec Computers Sdn. Bhd. was established on <strong>August 3, 2001</strong> with a firm commitment to delivering innovative, reliable, and high-performance IT solutions. Based in George Town, Penang, we have grown into a cornerstone technology partner for government agencies, universities, and commercial enterprises.
+          </p>
+          <p>
+            Authorised with official <strong>BUMIPUTERA status</strong> and registered with <strong>KEMENTERIAN KEWANGAN MALAYSIA (Ministry of Finance Malaysia)</strong>, Omegatec Computers provides end-to-end computer-related goods and services with an unwavering pursuit of Total Customer Satisfaction.
+          </p>
+
+          <div class="about-features">
+            <div class="about-feature-item">
+              <svg class="about-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span class="about-feature-text">Certified IT Engineers &amp; Specialists</span>
+            </div>
+            <div class="about-feature-item">
+              <svg class="about-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span class="about-feature-text">MOF Registered Government Supplier</span>
+            </div>
+            <div class="about-feature-item">
+              <svg class="about-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span class="about-feature-text">High-Speed Networking &amp; Fiber Optics</span>
+            </div>
+            <div class="about-feature-item">
+              <svg class="about-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span class="about-feature-text">Advanced Cybersecurity &amp; AI Solutions</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-cards-wrap reveal">
+          <div class="credential-card">
+            <div class="credential-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+              </svg>
+            </div>
+            <div class="credential-info">
+              <h4>Ministry of Finance Registered</h4>
+              <p>Fully compliant and certified supplier for state, federal, and municipal government procurement.</p>
+            </div>
+          </div>
+
+          <div class="credential-card">
+            <div class="credential-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+            </div>
+            <div class="credential-info">
+              <h4>Bumiputera Status Certified</h4>
+              <p>Recognised enterprise delivering premier IT products, structured cablings, and specialized consulting.</p>
+            </div>
+          </div>
+
+          <div class="credential-card">
+            <div class="credential-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
+              </svg>
+            </div>
+            <div class="credential-info">
+              <h4>Total Customer Satisfaction</h4>
+              <p>Decades-long reputation in Northern Malaysia for dependable after-sales maintenance and rapid support.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Services Section — 6 Pillars
+       ========================================================================= -->
+  <section id="services">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <span class="section-subtitle">Our Expertise</span>
+        <h2 class="section-title">Comprehensive 6-Pillar IT Solutions</h2>
+        <p class="section-desc">
+          From mission-critical hardware supply to sophisticated artificial intelligence pipelines, our certified engineering team powers your digital transformation.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Pillar 1: Hardware & Sales -->
+        <div class="service-card reveal">
+          <div class="service-icon-box">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+          </div>
+          <h3 class="service-title">Computer Sales &amp; Hardware</h3>
+          <p class="service-desc">
+            Authorized supply of enterprise workstations, high-performance laptops, server racks, and peripherals from industry-leading manufacturers.
+          </p>
+          <ul class="service-highlights">
+            <li>Enterprise desktop &amp; server procurement</li>
+            <li>Custom PC builds &amp; lab configurations</li>
+            <li>Component upgrades &amp; warranty management</li>
+          </ul>
+        </div>
+
+        <!-- Pillar 2: Networking & Fiber Optics -->
+        <div class="service-card reveal">
+          <div class="service-icon-box">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="16" y="16" width="6" height="6" rx="1"></rect>
+              <rect x="2" y="16" width="6" height="6" rx="1"></rect>
+              <rect x="9" y="2" width="6" height="6" rx="1"></rect>
+              <path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"></path>
+              <line x1="12" y1="12" x2="12" y2="8"></line>
+            </svg>
+          </div>
+          <h3 class="service-title">Networking &amp; Fiber Optics</h3>
+          <p class="service-desc">
+            Complete structured cabling, fiber optic termination, switch configurations, and secure multi-building local &amp; wide area network design.
+          </p>
+          <ul class="service-highlights">
+            <li>Fiber optic splicing &amp; OTDR testing</li>
+            <li>Managed wireless access point mesh</li>
+            <li>VLAN segmentation &amp; VPN gateways</li>
+          </ul>
+        </div>
+
+        <!-- Pillar 3: Cloud & Infrastructure -->
+        <div class="service-card reveal">
+          <div class="service-icon-box">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+            </svg>
+          </div>
+          <h3 class="service-title">Cloud &amp; Infrastructure</h3>
+          <p class="service-desc">
+            Scalable cloud hosting, hybrid migration, automated backup management, and high-availability database administration.
+          </p>
+          <ul class="service-highlights">
+            <li>Hybrid cloud deployment &amp; migrations</li>
+            <li>Disaster recovery &amp; automated snapshots</li>
+            <li>Relational &amp; enterprise database tuning</li>
+          </ul>
+        </div>
+
+        <!-- Pillar 4: Cybersecurity & AI/ML -->
+        <div class="service-card reveal">
+          <div class="service-icon-box">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <path d="m9 12 2 2 4-4"></path>
+            </svg>
+          </div>
+          <h3 class="service-title">Cybersecurity &amp; AI Solutions</h3>
+          <p class="service-desc">
+            Proactive threat monitoring, endpoint security, firewall governance, and machine learning models tailored to business intelligence.
+          </p>
+          <ul class="service-highlights">
+            <li>Next-gen firewall &amp; intrusion prevention</li>
+            <li>Endpoint protection &amp; vulnerability audits</li>
+            <li>Machine learning (ML) data analytics</li>
+          </ul>
+        </div>
+
+        <!-- Pillar 5: Custom Software & Web -->
+        <div class="service-card reveal">
+          <div class="service-icon-box">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="16 18 22 12 16 6"></polyline>
+              <polyline points="8 6 2 12 8 18"></polyline>
+            </svg>
+          </div>
+          <h3 class="service-title">System &amp; Web Development</h3>
+          <p class="service-desc">
+            Bespoke web applications, cross-platform mobile apps, customer portals, and internal enterprise automation systems.
+          </p>
+          <ul class="service-highlights">
+            <li>Modern responsive corporate websites</li>
+            <li>Custom ERP, CRM &amp; inventory systems</li>
+            <li>RESTful API &amp; legacy system integration</li>
+          </ul>
+        </div>
+
+        <!-- Pillar 6: Training & Consultation -->
+        <div class="service-card reveal">
+          <div class="service-icon-box">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+            </svg>
+          </div>
+          <h3 class="service-title">IT Training &amp; Consultation</h3>
+          <p class="service-desc">
+            Strategic IT advisory, computer-aided training programs, digital capability workshops, and IT infrastructure health audits.
+          </p>
+          <ul class="service-highlights">
+            <li>Technical staff &amp; software user training</li>
+            <li>IT procurement &amp; tender advisory</li>
+            <li>Strategic IT roadmap &amp; governance</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Clients Section — Infinite Seamless Logo Marquee (13 Logos)
+       ========================================================================= -->
+  <section id="clients">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <span class="section-subtitle">Prestigious Portfolio</span>
+        <h2 class="section-title">Trusted by Malaysia's Premier Institutions</h2>
+        <p class="section-desc">
+          We are honored to provide critical IT systems, hardware solutions, and technical advisory to Malaysia's foremost government councils, universities, state corporations, and healthcare bodies.
+        </p>
+      </div>
+
+      <!-- Marquee Carousel with 13 Logos -->
+      <div class="marquee-wrapper reveal">
+        <div class="marquee-track">
+          <!-- 1. USM -->
+          <div class="client-logo-card">
+            <img src="usm-logo.png" alt="Universiti Sains Malaysia" class="client-logo-img">
+            <span class="client-logo-name">Universiti Sains Malaysia</span>
+          </div>
+          <!-- 2. MBPP -->
+          <div class="client-logo-card">
+            <img src="mbpp-logo.png" alt="Majlis Bandaraya Pulau Pinang" class="client-logo-img">
+            <span class="client-logo-name">Majlis Bandaraya Pulau Pinang</span>
+          </div>
+          <!-- 3. MBSP -->
+          <div class="client-logo-card">
+            <img src="mbsp-logo.png" alt="Majlis Bandaraya Seberang Perai" class="client-logo-img">
+            <span class="client-logo-name">Majlis Bandaraya Seberang Perai</span>
+          </div>
+          <!-- 4. MAINPP -->
+          <div class="client-logo-card">
+            <img src="mainpp-logo.png" alt="Majlis Agama Islam Pulau Pinang" class="client-logo-img">
+            <span class="client-logo-name">Majlis Agama Islam Pulau Pinang</span>
+          </div>
+          <!-- 5. PDC -->
+          <div class="client-logo-card">
+            <img src="pdc-logo.png" alt="Penang Development Corporation" class="client-logo-img">
+            <span class="client-logo-name">Penang Development Corporation</span>
+          </div>
+          <!-- 6. CAP -->
+          <div class="client-logo-card">
+            <img src="cap-logo.png" alt="Consumers Association of Penang" class="client-logo-img">
+            <span class="client-logo-name">Consumers Association of Penang</span>
+          </div>
+          <!-- 7. PBBPP -->
+          <div class="client-logo-card">
+            <img src="pbbpp-logo.png" alt="Perbadanan Bukit Bendera Pulau Pinang" class="client-logo-img">
+            <span class="client-logo-name">Perbadanan Bukit Bendera</span>
+          </div>
+          <!-- 8. MADA -->
+          <div class="client-logo-card">
+            <img src="mada-logo.png" alt="Lembaga Kemajuan Pertanian Muda" class="client-logo-img">
+            <span class="client-logo-name">Lembaga Pertanian Muda (MADA)</span>
+          </div>
+          <!-- 9. HPP -->
+          <div class="client-logo-card">
+            <img src="hpp-logo.png" alt="Hospital Pulau Pinang" class="client-logo-img">
+            <span class="client-logo-name">Hospital Pulau Pinang</span>
+          </div>
+          <!-- 10. PPAPP -->
+          <div class="client-logo-card">
+            <img src="ppapp-logo.png" alt="Perbadanan Perpustakaan Awam Pulau Pinang" class="client-logo-img">
+            <span class="client-logo-name">Perpustakaan Awam Pulau Pinang</span>
+          </div>
+          <!-- 11. SUK Penang -->
+          <div class="client-logo-card">
+            <img src="suk-logo.png" alt="Pejabat Setiausaha Kerajaan Negeri Pulau Pinang" class="client-logo-img">
+            <span class="client-logo-name">SUK Negeri Pulau Pinang</span>
+          </div>
+          <!-- 12. SPPP -->
+          <div class="client-logo-card">
+            <img src="sppp-logo.png" alt="Suruhanjaya Pelabuhan Pulau Pinang" class="client-logo-img">
+            <span class="client-logo-name">Suruhanjaya Pelabuhan PP</span>
+          </div>
+          <!-- 13. KK -->
+          <div class="client-logo-card">
+            <img src="kk-logo.png" alt="Kementerian Kesihatan Malaysia" class="client-logo-img">
+            <span class="client-logo-name">Kementerian Kesihatan Malaysia</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Contact Hub — Direct WhatsApp & Quick Call First
+       ========================================================================= -->
+  <section id="contact">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <span class="section-subtitle">Get in Touch</span>
+        <h2 class="section-title">Direct Contact &amp; Fast Inquiries</h2>
+        <p class="section-desc">
+          Speak directly with our technical team or sales specialists. We are ready to answer your questions and assist with project tenders.
+        </p>
+      </div>
+
+      <div class="contact-layout">
+        <!-- Left Column: Quick Action Contact Cards -->
+        <div class="direct-actions-box reveal">
+          <div class="contact-quick-banner">
+            <h3>Immediate Response Channels</h3>
+            <p>For urgent support, tender specifications, or instant quotations, tap below to chat directly with our sales &amp; engineering managers on WhatsApp or call our office.</p>
+          </div>
+
+          <div class="quick-contact-grid">
+            <!-- WhatsApp 1 -->
+            <a href="https://wa.me/60174201610" target="_blank" rel="noopener" class="direct-action-card card-wa">
+              <div class="card-top">
+                <div class="card-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                  </svg>
+                </div>
+                <div class="card-meta">
+                  <h4>WhatsApp Support</h4>
+                  <span>Fast Quote &amp; Enquiries</span>
+                </div>
+              </div>
+              <span class="card-number">+6017 420 1610</span>
+              <span class="card-btn-pill">Chat Online →</span>
+            </a>
+
+            <!-- WhatsApp 2 -->
+            <a href="https://wa.me/601155909071" target="_blank" rel="noopener" class="direct-action-card card-wa">
+              <div class="card-top">
+                <div class="card-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                  </svg>
+                </div>
+                <div class="card-meta">
+                  <h4>WhatsApp Line 2</h4>
+                  <span>Technical Advisory</span>
+                </div>
+              </div>
+              <span class="card-number">+6011 5590 9071</span>
+              <span class="card-btn-pill">Chat Online →</span>
+            </a>
+
+            <!-- Office Phone 1 -->
+            <a href="tel:+6042811860" class="direct-action-card card-phone">
+              <div class="card-top">
+                <div class="card-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                </div>
+                <div class="card-meta">
+                  <h4>Office Landline</h4>
+                  <span>Mon–Fri 9am–6pm</span>
+                </div>
+              </div>
+              <span class="card-number">+604 281 1860</span>
+              <span class="card-btn-pill">Call Desk →</span>
+            </a>
+
+            <!-- Mobile Phone 2 -->
+            <a href="tel:+60174201610" class="direct-action-card card-phone">
+              <div class="card-top">
+                <div class="card-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                    <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                  </svg>
+                </div>
+                <div class="card-meta">
+                  <h4>Mobile Hotline</h4>
+                  <span>Direct Specialist</span>
+                </div>
+              </div>
+              <span class="card-number">+6017 420 1610</span>
+              <span class="card-btn-pill">Direct Call →</span>
+            </a>
+          </div>
+
+          <!-- Office Location Info Card -->
+          <div class="office-info-card">
+            <div class="office-info-header">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--primary);">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <h4>Registered Head Office</h4>
+            </div>
+            <ul class="office-details-list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                </svg>
+                <span><strong>Address:</strong> 1-G-45, Taman Sri Pinang, Jalan Veterinary, 10150 George Town, Penang, Malaysia</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span><strong>Email:</strong> <a href="mailto:sales@omegatec.com.my" style="color:var(--primary); font-weight:600;">sales@omegatec.com.my</a></span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span><strong>Operating Hours:</strong> Monday – Friday: 9:00 AM – 6:00 PM | Saturday: 9:00 AM – 1:00 PM</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Right Column: Interactive Map & Streamlined Form -->
+        <div class="contact-interactive-box reveal">
+          <!-- Embedded Google Map -->
+          <div class="map-card">
+            <div class="map-card-header">
+              <h4>Find Us in George Town, Penang</h4>
+              <a href="https://maps.google.com/?q=1-G-45+Taman+Sri+Pinang+Jalan+Veterinary+George+Town+Penang" target="_blank" rel="noopener" style="font-size:0.8125rem; font-weight:600; color:var(--primary);">Open Google Maps ↗</a>
+            </div>
+            <iframe class="map-iframe" loading="lazy" allowfullscreen title="Omegatec Computers Office Location"
+              src="https://www.google.com/maps?q=1-G-45%2C%20Taman%20Sri%20Pinang%2C%20Jalan%20Veterinary%2C%20George%20Town%2C%20Penang%2C%20Malaysia&output=embed">
+            </iframe>
+          </div>
+
+          <!-- Streamlined Message Form -->
+          <div class="streamlined-form-card">
+            <h4>Send Us a Message</h4>
+            <p>Prefer writing to us? Fill out your details below and we will respond within one business day.</p>
+            <form action="mailto:sales@omegatec.com.my" method="post" enctype="text/plain" id="contact-form" onsubmit="setTimeout(function(){ window.location.href='thank-you.html'; }, 400); return true;">
+              <div class="form-group-row">
+                <div class="form-field">
+                  <label for="contact-name">Full Name *</label>
+                  <input type="text" id="contact-name" name="name" class="form-input" placeholder="Your name" required>
+                </div>
+                <div class="form-field">
+                  <label for="contact-email">Email Address *</label>
+                  <input type="email" id="contact-email" name="email" class="form-input" placeholder="name@company.com" required>
+                </div>
+              </div>
+              <div class="form-group-row">
+                <div class="form-field">
+                  <label for="contact-phone">Phone / WhatsApp</label>
+                  <input type="tel" id="contact-phone" name="phone" class="form-input" placeholder="+60 1X-XXXXXXX">
+                </div>
+                <div class="form-field">
+                  <label for="contact-subject">Subject *</label>
+                  <input type="text" id="contact-subject" name="subject" class="form-input" placeholder="e.g. Server Quote / Networking" required>
+                </div>
+              </div>
+              <div class="form-field">
+                <label for="contact-message">Message *</label>
+                <textarea id="contact-message" name="message" class="form-textarea" placeholder="Describe your project, procurement tender, or requirements..." required></textarea>
+              </div>
+              <button type="submit" class="btn-form-submit">
+                Submit Message
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Footer
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h3>Omegatec Computers Sdn. Bhd.</h3>
+        <p>
+          Established on August 3, 2001 in Malaysia. Providing reliable computer hardware, networking solutions, cloud architecture, cybersecurity, and enterprise systems to government and commercial sectors.
+        </p>
+        <span class="footer-reg-badge">
+          Registered with Kementerian Kewangan Malaysia (MOF) &bull; Bumiputera Certified
+        </span>
+      </div>
+
+      <div class="footer-column">
+        <h4>Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Our Services</a></li>
+          <li><a href="#clients">Prestigious Clients</a></li>
+          <li><a href="#contact">Contact Information</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Our Services</h4>
+        <ul class="footer-links">
+          <li><a href="#services">Computer Sales &amp; Hardware</a></li>
+          <li><a href="#services">Networking &amp; Fiber Optics</a></li>
+          <li><a href="#services">Cloud &amp; Infrastructure</a></li>
+          <li><a href="#services">Cybersecurity &amp; AI</a></li>
+          <li><a href="#services">System &amp; Web Design</a></li>
+          <li><a href="#services">IT Training &amp; Advisory</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Quick Connect</h4>
+        <ul class="footer-contact-info">
+          <li>
+            <strong>WhatsApp:</strong><br>
+            <a href="https://wa.me/60174201610" target="_blank" rel="noopener">+6017 420 1610</a> / <a href="https://wa.me/601155909071" target="_blank" rel="noopener">+6011 5590 9071</a>
+          </li>
+          <li>
+            <strong>Office Phone:</strong><br>
+            <a href="tel:+6042811860">+604 281 1860</a>
+          </li>
+          <li>
+            <strong>Email:</strong><br>
+            <a href="mailto:sales@omegatec.com.my">sales@omegatec.com.my</a>
+          </li>
+          <li>
+            <strong>Location:</strong><br>
+            1-G-45, Taman Sri Pinang, Jalan Veterinary, George Town, Penang
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Omegatec Computers Sdn. Bhd. All Rights Reserved.</p>
+      <p>Bumiputera Status Certified &bull; Ministry of Finance Malaysia Registered</p>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       Floating Action Buttons
+       ========================================================================= -->
+  <div class="floating-actions-container">
+    <!-- Back-To-Top Button -->
+    <button class="btn-back-to-top" aria-label="Back to top of page">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+    </button>
+
+    <!-- Glowing WhatsApp FAB -->
+    <a href="https://wa.me/60174201610" class="whatsapp-fab" target="_blank" rel="noopener" aria-label="Chat with Omegatec on WhatsApp">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+      </svg>
+      <span>Chat with us</span>
+    </a>
   </div>
-</footer>
 
-<!-- Floating WhatsApp Action -->
-<a href="https://wa.me/60174201610" target="_blank" rel="noopener" style="position: fixed; bottom: 20px; right: 20px; background-color: #25D366; color: white; border-radius: 50px; padding: 12px 20px; box-shadow: 2px 5px 15px rgba(0,0,0,0.3); z-index: 9999; text-decoration: none; display: flex; align-items: center; font-weight: bold; font-family: Arial, sans-serif;">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="25" height="25" style="margin-right: 10px;">
-  Chat with us
-</a>
+  <!-- JavaScript Animations Controller -->
+  <script src="js/animations.js"></script>
 </body>
 </html>
