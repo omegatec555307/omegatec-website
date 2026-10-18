@@ -7,22 +7,25 @@
   <meta name="theme-color" content="#002244">
   <title>Thank You | Omegatec Computers Sdn. Bhd.</title>
 
-  <!-- Google Fonts: Inter -->
+  <!-- Google Fonts: Inter & Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
 
   <!-- Unified Design System Stylesheet -->
-  <link rel="stylesheet" href="css/styles.css?v=2.4">
+  <link rel="stylesheet" href="css/styles.css?v=2.5">
 </head>
 <body style="min-height: 100vh; display: flex; flex-direction: column;">
+
+  <!-- Accessible Skip to Content Link (WCAG 2.4.1) -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- Unified Sticky Glass Header -->
   <header class="site-header">
     <div class="header-container">
       <a href="index.html" class="brand-link" aria-label="Omegatec Homepage">
         <div class="brand-logo-wrap">
-          <img src="omega-logo.png" alt="Omegatec Logo">
+          <img src="omega-logo.png" alt="Omegatec Logo" width="44" height="44" decoding="async">
         </div>
         <div class="brand-text-wrap">
           <span class="brand-title">Omegatec Computers Sdn. Bhd.</span>
@@ -36,7 +39,7 @@
   </header>
 
   <!-- Thank You Hero Container -->
-  <main style="flex: 1; display: flex; align-items: center; justify-content: center; padding: calc(var(--header-height) + 40px) 24px 60px; position: relative; overflow: hidden; background: linear-gradient(145deg, var(--primary-deep) 0%, var(--primary-dark) 50%, var(--primary) 100%);">
+  <main id="main-content" style="flex: 1; display: flex; align-items: center; justify-content: center; padding: calc(var(--header-height) + 40px) 24px 60px; position: relative; overflow: hidden; background: linear-gradient(145deg, var(--primary-deep) 0%, var(--primary-dark) 50%, var(--primary) 100%);">
     <div class="ambient-blob ambient-blob-1" aria-hidden="true"></div>
     <div class="ambient-blob ambient-blob-2" aria-hidden="true"></div>
 
