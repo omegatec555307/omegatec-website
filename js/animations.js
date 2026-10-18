@@ -374,4 +374,93 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // =========================================================================
+  // 8. Top Announcement Bar (Dismissal & LocalStorage Persistence)
+  // =========================================================================
+  const announcementBar = document.getElementById('top-announcement');
+  const announcementCloseBtn = document.getElementById('announcement-close-btn');
+  const ANNOUNCEMENT_STORAGE_KEY = 'omegatec_promo_dismissed_v1';
+
+  // Check saved state
+  if (localStorage.getItem(ANNOUNCEMENT_STORAGE_KEY) === 'true') {
+    document.body.classList.add('announcement-closed');
+    if (announcementBar) {
+      announcementBar.style.display = 'none';
+    }
+  }
+
+  if (announcementCloseBtn && announcementBar) {
+    announcementCloseBtn.addEventListener('click', () => {
+      document.body.classList.add('announcement-closed');
+      try {
+        localStorage.setItem(ANNOUNCEMENT_STORAGE_KEY, 'true');
+      } catch (e) {
+        console.warn('LocalStorage error:', e);
+      }
+      setTimeout(() => {
+        announcementBar.style.display = 'none';
+      }, 300);
+    });
+  }
+
+  // =========================================================================
+  // 9. Promo Poster Lightbox Modal (Accessible Dialog with Focus Trap)
+  // =========================================================================
+  const promoLightbox = document.getElementById('promo-lightbox');
+  const openLightboxBtn = document.getElementById('open-promo-lightbox');
+  const closeLightboxBtn = document.getElementById('close-promo-lightbox');
+  const lightboxBackdrop = document.getElementById('lightbox-backdrop');
+
+  function openPromoModal() {
+    if (!promoLightbox) return;
+    promoLightbox.removeAttribute('hidden');
+    document.body.style.overflow = 'hidden';
+    if (closeLightboxBtn) closeLightboxBtn.focus();
+    document.addEventListener('keydown', handleLightboxKeydown);
+  }
+
+  function closePromoModal() {
+    if (!promoLightbox) return;
+    promoLightbox.setAttribute('hidden', '');
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', handleLightboxKeydown);
+    if (openLightboxBtn) openLightboxBtn.focus();
+  }
+
+  function handleLightboxKeydown(e) {
+    if (e.key === 'Escape') {
+      e.preventDefault();
+      closePromoModal();
+      return;
+    }
+
+    if (e.key === 'Tab') {
+      const focusableElements = promoLightbox.querySelectorAll(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      );
+      if (focusableElements.length === 0) return;
+
+      const firstEl = focusableElements[0];
+      const lastEl = focusableElements[focusableElements.length - 1];
+
+      if (e.shiftKey && document.activeElement === firstEl) {
+        e.preventDefault();
+        lastEl.focus();
+      } else if (!e.shiftKey && document.activeElement === lastEl) {
+        e.preventDefault();
+        firstEl.focus();
+      }
+    }
+  }
+
+  if (openLightboxBtn) {
+    openLightboxBtn.addEventListener('click', openPromoModal);
+  }
+  if (closeLightboxBtn) {
+    closeLightboxBtn.addEventListener('click', closePromoModal);
+  }
+  if (lightboxBackdrop) {
+    lightboxBackdrop.addEventListener('click', closePromoModal);
+  }
 });
