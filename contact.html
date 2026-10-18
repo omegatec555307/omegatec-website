@@ -13,41 +13,41 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
 
   <!-- Unified Design System Stylesheet -->
-  <link rel="stylesheet" href="css/styles.css?v=4.0">
+  <link rel="stylesheet" href="css/styles.css?v=5.0">
 </head>
 <body>
 
   <!-- Accessible Skip to Content Link (WCAG 2.4.1) -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- Top Global Announcement Bar (WCAG 2.4.1 & Dismissible) -->
-  <aside id="top-announcement" class="top-announcement-bar" role="region" aria-label="Current Promotion Announcement">
-    <div class="announcement-container">
-      <div class="announcement-content">
-        <span class="announcement-badge">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-          </svg>
-          LIMITED PROMO
-        </span>
-        <p class="announcement-text">
-          Refurbished <strong>ASUS ExpertCenter D7</strong> Desktop (i7-12700 / 16GB / 1TB SSD) + 23.8" FHD Monitor Bundle — <strong>Only RM 1,650!</strong>
-        </p>
-        <a href="index.html#promo" class="announcement-cta">View Offer &rarr;</a>
-      </div>
-      <button type="button" class="announcement-close" id="announcement-close-btn" aria-label="Close promotion announcement">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-      </button>
-    </div>
-  </aside>
-
   <!-- =========================================================================
-       Unified Sticky Glass Header
+       Unified Sticky Glass Header (Encapsulates Top Promo Banner & Nav)
        ========================================================================= -->
   <header class="site-header">
+    <!-- Top Global Announcement Bar (Embedded Seamlessly in Header) -->
+    <aside id="top-announcement" class="top-announcement-bar" role="region" aria-label="Current Promotion Announcement">
+      <div class="announcement-container">
+        <div class="announcement-content">
+          <span class="announcement-badge">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+            LIMITED PROMO
+          </span>
+          <p class="announcement-text">
+            Refurbished <strong>ASUS ExpertCenter D7</strong> Desktop (i7-12700 / 16GB / 1TB SSD) + 23.8" FHD Monitor Bundle — <strong>Only RM 1,650!</strong>
+          </p>
+          <a href="index.html#promo" class="announcement-cta">View Offer &rarr;</a>
+        </div>
+        <button type="button" class="announcement-close" id="announcement-close-btn" aria-label="Close promotion announcement">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </aside>
+
     <div class="header-container">
       <a href="index.html" class="brand-link" aria-label="Omegatec Homepage">
         <div class="brand-logo-wrap">
@@ -385,6 +385,6 @@
   </div>
 
   <!-- JavaScript Animations Controller -->
-  <script src="js/animations.js?v=2.4"></script>
+  <script src="js/animations.js?v=5.0"></script>
 </body>
 </html>
