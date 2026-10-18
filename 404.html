@@ -4,86 +4,116 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>Page Not Found | Omegatec Computers Sdn. Bhd.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
     :root {
-      --primary: #004080;
-      --secondary: #002b56;
-      --accent: #f39c12;
-      --light: #f9f9f9;
+      --primary: #0052cc;
+      --primary-dark: #0a192f;
+      --primary-deep: #050d1a;
+      --accent: #00a3ff;
+      --light: #f8fafc;
+      --text: #0f172a;
+      --text-muted: #475569;
+    }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
     body {
-      font-family: 'Segoe UI', Tahoma, sans-serif;
-      margin: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       line-height: 1.6;
-      color: #333;
+      color: var(--text);
       background: var(--light);
       display: flex;
       flex-direction: column;
       min-height: 100vh;
     }
+    h1, h2, .status-code {
+      font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+    }
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
     .titlebar {
-      background: rgba(0,43,86,0.95);
+      background: rgba(5, 13, 26, 0.96);
       color: #fff;
-      padding: 16px 20px;
+      padding: 16px 24px;
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
     }
-    .titlebar .logo img { width: 40px; height: 40px; object-fit: contain; }
-    .title-text h1 { margin: 0; font-size: 1.6rem; }
-    .title-text p { margin: 2px 0 0; opacity: .9; font-size: 0.9rem; }
+    .titlebar .logo img { width: 44px; height: 44px; object-fit: contain; }
+    .title-text h1 { margin: 0; font-size: 1.15rem; font-weight: 700; }
+    .title-text p { margin: 2px 0 0; color: var(--accent); font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
     .container {
-      max-width: 600px;
+      max-width: 580px;
       margin: auto;
-      padding: 40px 20px;
+      padding: 48px 32px;
       text-align: center;
       background: white;
-      border-radius: 8px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 23, 48, 0.08);
+      border: 1px solid rgba(226, 232, 240, 0.9);
       border-top: 5px solid var(--accent);
     }
     .status-code {
-      font-size: 4rem;
+      font-size: 4.5rem;
       font-weight: 800;
       color: var(--primary);
       margin: 0;
       line-height: 1;
     }
     .btn {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       margin-top: 24px;
-      padding: 12px 24px;
+      padding: 12px 28px;
+      min-height: 44px;
       background: var(--primary);
       color: white;
       text-decoration: none;
-      border-radius: 6px;
+      border-radius: 9999px;
       font-weight: 700;
+      font-size: 0.9375rem;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 14px rgba(0, 82, 204, 0.25);
     }
-    .btn:hover { background: var(--secondary); }
+    .btn:hover {
+      background: #2563eb;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 82, 204, 0.35);
+    }
     footer {
-      background: var(--secondary);
-      color: white;
+      background: var(--primary-deep);
+      color: rgba(255, 255, 255, 0.7);
       text-align: center;
       padding: 24px 20px;
+      font-size: 0.8125rem;
       margin-top: auto;
     }
 </style>
 </head>
 <body>
 <div class="titlebar">
-  <div class="logo"><img alt="Omegatec Logo" src="omega-logo.png"/></div>
+  <div class="logo"><img alt="Omegatec Logo" src="omega-logo.png" width="44" height="44" decoding="async"/></div>
   <div class="title-text">
     <h1>Omegatec Computers Sdn. Bhd.</h1>
-    <p>IT Solutions That Transform Your Business</p>
+    <p>The Right Choice</p>
   </div>
 </div>
 
-<div class="container">
+<main class="container">
   <p class="status-code">404</p>
-  <h2 style="color: var(--primary); margin-top: 10px;">Page Not Found</h2>
-  <p>The page you are looking for doesn't exist or has been moved.</p>
-  <a class="btn" href="index.html">Back to Home</a>
-</div>
+  <h2 style="color: var(--primary-deep); margin-top: 14px; font-size: 1.5rem;">Page Not Found</h2>
+  <p style="color: var(--text-muted); margin-top: 8px;">The page you are looking for doesn't exist or has been moved.</p>
+  <a class="btn" href="index.html">Return to Homepage</a>
+</main>
 
 <footer>
   <p>&copy; 2026 Omegatec Computers Sdn. Bhd. All Rights Reserved.</p>
