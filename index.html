@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Omegatec Computers Sdn. Bhd. | IT Solutions Malaysia</title>
+<meta name="description" content="Omegatec Computers Sdn. Bhd. provides enterprise IT solutions, networking, cybersecurity, cloud computing, and system development in Malaysia."/>
+<style>
+    :root {
+      --primary: #004080;
+      --secondary: #002b56;
+      --accent: #f39c12;
+      --light: #f9f9f9;
+      /* Sticky heights */
+      --titlebar-height: 96px;
+      --nav-height: 64px;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      margin: 0;
+      line-height: 1.6;
+      color: #333;
+      scroll-behavior: smooth;
+      background: var(--light);
+    }
+
+    /* ===== Sticky Title Bar (Logo + Title + Tagline) ===== */
+    .titlebar {
+      position: sticky;
+      top: 0;
+      z-index: 1200;
+      background: rgba(0,43,86,0.95);
+      color: #fff;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      backdrop-filter: saturate(120%) blur(2px);
+    }
+    .titlebar .logo img { width: 40px; height: 40px; object-fit: contain; display:block; }
+    .title-text { display: flex; flex-direction: column; }
+    .title-text h1 { margin: 0; font-size: 1.9rem; line-height: 1.2; }
+    .title-text p  { margin: 2px 0 0; opacity: .95; }
+
+    /* ===== Navigation (sticky below titlebar) ===== */
+    nav {
+      background: var(--primary);
+      color: #fff;
+      padding: 0.75rem 1rem;
+      position: sticky;
+      top: var(--titlebar-height);
+      z-index: 1100;
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+    }
+    nav a { color: #fff; text-decoration: none; font-weight: 600; text-transform: uppercase; font-size: .9rem; }
+    nav a:hover { color: var(--accent); }
+
+    /* ===== Hero (visual background behind sticky bars) ===== */
+    header {
+      background: linear-gradient(rgba(0,43,86,0.55), rgba(0,43,86,0.55)),
+                  url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80');
+      background-size: cover; background-position: center; color: white;
+      text-align: center; padding: 80px 20px 20px;
+    }
+
+    /* ===== Sections ===== */
+    section { padding: 80px 10% 40px; max-width: 1200px; margin: auto;
+      scroll-margin-top: calc(var(--titlebar-height) + var(--nav-height) + 16px);
+    }
+    h2 { color: var(--primary); border-bottom: 3px solid var(--accent); display: inline-block; margin-bottom: 30px; }
+
+    /* Services Grid */
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+    .card { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-top: 5px solid var(--primary); }
+
+    /* Clients */
+    #clients { background: #fff; text-align: center; padding: 80px 20px; }
+    .client-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 30px; align-items: center; justify-items: center; margin-top: 40px; }
+    .client-emblem { width: 150px; height: 150px; object-fit: contain; filter: grayscale(100%); transition: filter .3s ease, transform .3s ease; }
+    .client-emblem:hover { filter: grayscale(0%); transform: scale(1.08); }
+    .client-card { display: flex; flex-direction: column; align-items: center; }
+    .client-card p { font-size: .9rem; font-weight: 600; color: #555; margin-top: 10px; }
+
+    footer { background: var(--secondary); color: white; text-align: center; padding: 40px 20px; margin-top: 60px; }
+    .footer-content a { color: var(--accent); text-decoration: none; }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 768px) {
+      :root { --titlebar-height: 90px; }
+    }
+    @media (max-width: 480px) {
+      :root { --titlebar-height: 84px; }
+      .titlebar { padding: 10px 14px; }
+      .titlebar .logo img { width: 32px; height: 32px; }
+      .title-text h1 { font-size: 1.4rem; }
+    }
+
+    .logo-link { display:inline-flex; align-items:center; text-decoration:none; }
+    .logo-link:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .logo-link:hover { opacity: 0.95; }
+
+    /* ===== Contact Form Styles ===== */
+    #contact form { background: #fff; padding: 24px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); margin-top: 16px; }
+    #contact .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    #contact .form-field { display: flex; flex-direction: column; margin-bottom: 14px; }
+    #contact label { font-weight: 600; margin-bottom: 6px; color: var(--primary); }
+    #contact input, #contact textarea { border: 1px solid #ccc; border-radius: 6px; padding: 10px 12px; font-size: 1rem; font-family: inherit; }
+    #contact input:focus, #contact textarea:focus { outline: 2px solid var(--accent); border-color: var(--accent); }
+    #contact .form-actions { display: flex; align-items: center; gap: 16px; margin-top: 10px; }
+    #contact button { background: var(--primary); color: #fff; border: none; padding: 12px 18px; border-radius: 6px; cursor: pointer; font-weight: 700; }
+    #contact button:hover { background: var(--secondary); }
+    #contact .form-note { font-size: .9rem; color: #666; margin: 0; }
+    #contact .visually-hidden { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+    @media (max-width: 768px) { #contact .form-row { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<!-- Sticky Title Bar -->
+<div class="titlebar">
+  <a aria-label="Back to top" class="logo-link" href="#">
+    <picture class="logo">
+      <source media="(prefers-color-scheme: dark)" srcset="omega-logo.png"/>
+      <img alt="Omegatec Logo" src="omega-logo.png"/>
+    </picture>
+  </a>
+  <div class="title-text">
+    <h1>Omegatec Computers Sdn. Bhd.</h1>
+    <p>IT Solutions That Transform Your Business</p>
+  </div>
+</div>
+
+<!-- Sticky Navigation -->
+<nav>
+  <a href="#about">About Us</a>
+  <a href="#services">Services</a>
+  <a href="#clients">Clients</a>
+  <a href="#contact">Contact Us</a>
+</nav>
+
+<!-- Visual header / hero -->
+<header></header>
+
+<!-- Content Sections -->
+<section id="about">
+  <h2>About Us</h2>
+  <p>Omegatec Computers Sdn. Bhd. was established on August 3, 2001, and is based in Malaysia. Our areas of expertise include Computer sales, services, networking & fiber optic solutions, system and app development, website designing, IT consulting; cloud computing services; cybersecurity solutions; infrastructure and database management; artificial intelligence (AI) and machine learning (ML) solutions; and other IT-enabled services. The Company shall also provide consultancy, advisory, and training services in the areas of Information Technology. The company has registered with KEMENTERIAN KEWANGAN MALAYSIA (Ministry of Finance Malaysia), we are committed to delivering innovative IT solutions.</p>
+</section>
+
+<section id="services" style="background:#eee; max-width:100%;">
+  <div style="max-width:1200px; margin:auto;">
+    <h2>Our Services</h2>
+    <div class="services-grid">
+      <div class="card"><h3>Managed IT Services</h3><p>Comprehensive support and infrastructure management.</p></div>
+      <div class="card"><h3>IT Security</h3><p>Advanced cybersecurity and data protection solutions.</p></div>
+      <div class="card"><h3>System Development</h3><p>Custom app and website design for your business.</p></div>
+      <div class="card"><h3>Training &amp; Consultation</h3><p>IT training and expert consulting services.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="clients">
+  <h2>Our Prestigious Clients</h2>
+  <p>We are honored to provide IT solutions to Malaysia's leading institutions and government bodies.</p>
+  <div class="client-grid">
+    <div class="client-card"><img alt="Universiti Sains Malaysia" class="client-emblem" src="usm-logo.png"/><p>Universiti Sains Malaysia</p></div>
+    <div class="client-card"><img alt="MBPP" class="client-emblem" src="mbpp-logo.png"/><p>Majlis Bandaraya Pulau Pinang</p></div>
+    <div class="client-card"><img alt="MBSP" class="client-emblem" src="mbsp-logo.png"/><p>Majlis Bandaraya Seberang Jaya</p></div>
+    <div class="client-card"><img alt="Majlis Agama Islam" class="client-emblem" src="mainpp-logo.png"/><p>Majlis Agama Islam Pulau Pinang</p></div>
+    <div class="client-card"><img alt="Penang Development Corporation" class="client-emblem" src="pdc-logo.png"/><p>Penang Development Corporation</p></div>
+    <div class="client-card"><img alt="Consumers Association of Penang" class="client-emblem" src="cap-logo.png"/><p>Consumers Association of Penang</p></div>
+    <div class="client-card"><img alt="Perbadanan Bukit Bendera Pulau Pinang" class="client-emblem" src="pbbpp-logo.png"/><p>Perbadanan Bukit Bendera Pulau Pinang</p></div>
+    <div class="client-card"><img alt="Lembaga Kemajuan Pertanian Muda" class="client-emblem" src="mada-logo.png"/><p>Lembaga Kemajuan Pertanian Muda</p></div>
+    <div class="client-card"><img alt="Hospital Pulau Pinang" class="client-emblem" src="hpp-logo.png"/><p>Hospital Pulau Pinang</p></div>
+    <div class="client-card"><img alt="Perbadanan Perpustakaan Awam Pulau Pinang" class="client-emblem" src="ppapp-logo.png"/><p>Perbadanan Perpustakaan Awam Pulau Pinang</p></div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p><strong>Address:</strong> 1-G-45, Taman Sri Pinang, Jalan Veterinari, 10150, Pulau Pinang, Malaysia.<br/>
+  <strong>Tel/Fax:</strong> +604-2811 860 | <strong>Mobile:</strong> +6012-420 9071, +6017-420 1610 | <strong>Email:</strong> <a href="mailto:sales@omegatec.com.my">sales@omegatec.com.my</a></p>
+  <form action="mailto:sales@omegatec.com.my" id="contact-form" method="post" onsubmit="setTimeout(function(){ window.location.href='thank-you.html'; }, 400); return true;">
+    <div class="form-row">
+      <div class="form-field">
+        <label for="name">Name<span aria-hidden="true">*</span></label>
+        <input id="name" name="name" placeholder="Your full name" required="" type="text"/>
+      </div>
+      <div class="form-field">
+        <label for="email">Email<span aria-hidden="true">*</span></label>
+        <input id="email" name="email" placeholder="you@example.com" required="" type="email"/>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-field">
+        <label for="phone">Phone</label>
+        <input id="phone" name="phone" placeholder="+60-1X-XXXXXXX" type="tel"/>
+      </div>
+      <div class="form-field">
+        <label for="subject">Subject<span aria-hidden="true">*</span></label>
+        <input id="subject" name="subject" placeholder="How can we help?" required="" type="text"/>
+      </div>
+    </div>
+    <div class="form-field">
+      <label for="message">Message<span aria-hidden="true">*</span></label>
+      <textarea id="message" name="message" placeholder="Tell us about your project or request..." required="" rows="6"></textarea>
+    </div>
+    <div class="form-actions">
+      <button type="submit">Send Message</button>
+      <p class="form-note">By submitting, you agree to our processing of your information for the purpose of responding to your inquiry.</p>
+      <noscript>After you send the email, please return to the browser and go to thank-you.html to see the confirmation.</noscript>
+    </div>
+  </form>
+  <div aria-live="polite" class="visually-hidden" id="form-status" role="status"></div>
+</section>
+
+<footer>
+  <div class="footer-content">
+    <p>&copy; 2026 Omegatec Computers Sdn. Bhd. <a href="#contact">All Rights Reserved.</a></p>
+  </div>
+</footer>
+
+<!-- Floating WhatsApp Action -->
+<a href="https://wa.me/60174201610" target="_blank" rel="noopener" style="position: fixed; bottom: 20px; right: 20px; background-color: #25D366; color: white; border-radius: 50px; padding: 12px 20px; box-shadow: 2px 5px 15px rgba(0,0,0,0.3); z-index: 9999; text-decoration: none; display: flex; align-items: center; font-weight: bold; font-family: Arial, sans-serif;">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="25" height="25" style="margin-right: 10px;">
+  Chat with us
+</a>
+</body>
+</html>
