@@ -463,4 +463,59 @@ document.addEventListener('DOMContentLoaded', () => {
   if (lightboxBackdrop) {
     lightboxBackdrop.addEventListener('click', closePromoModal);
   }
+
+  // =========================================================================
+  // 10. Accurate Header-Aware Anchor Smooth Scrolling
+  // =========================================================================
+  function getStickyHeaderOffset() {
+    const header = document.querySelector('.site-header');
+    const announcement = document.getElementById('top-announcement');
+    let offset = 0;
+    if (header && window.getComputedStyle(header).position === 'fixed') {
+      offset += header.offsetHeight;
+    }
+    if (announcement && announcement.offsetParent !== null && !document.body.classList.contains('announcement-closed')) {
+      offset += announcement.offsetHeight;
+    }
+    return offset;
+  }
+
+  function smoothScrollToElement(el) {
+    if (!el) return;
+    const offset = getStickyHeaderOffset();
+    const elementPosition = el.getBoundingClientRect().top + window.pageYOffset;
+    const offsetPosition = elementPosition - offset;
+    window.scrollTo({
+      top: Math.max(0, offsetPosition),
+      behavior: prefersReducedMotion ? 'auto' : 'smooth'
+    });
+  }
+
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      if (!href || href === '#' || href.length <= 1) return;
+      const targetElement = document.querySelector(href);
+      if (!targetElement) return;
+
+      e.preventDefault();
+      smoothScrollToElement(targetElement);
+
+      if (history.pushState) {
+        history.pushState(null, null, href);
+      } else {
+        window.location.hash = href;
+      }
+    });
+  });
+
+  // Handle direct page load with hash in URL
+  if (window.location.hash && window.location.hash.length > 1) {
+    setTimeout(() => {
+      const targetElement = document.querySelector(window.location.hash);
+      if (targetElement) {
+        smoothScrollToElement(targetElement);
+      }
+    }, 200);
+  }
 });
