@@ -20,6 +20,30 @@
   <!-- Accessible Skip to Content Link (WCAG 2.4.1) -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
+  <!-- Top Global Announcement Bar (WCAG 2.4.1 & Dismissible) -->
+  <aside id="top-announcement" class="top-announcement-bar" role="region" aria-label="Current Promotion Announcement">
+    <div class="announcement-container">
+      <div class="announcement-content">
+        <span class="announcement-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+          </svg>
+          LIMITED PROMO
+        </span>
+        <p class="announcement-text">
+          Refurbished <strong>ASUS ExpertCenter D7</strong> Desktop (i7-12700 / 16GB / 1TB SSD) + 23.8" FHD Monitor Bundle — <strong>Only RM 1,650!</strong>
+        </p>
+        <a href="#promo" class="announcement-cta">View Offer &rarr;</a>
+      </div>
+      <button type="button" class="announcement-close" id="announcement-close-btn" aria-label="Close promotion announcement">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </aside>
+
   <!-- =========================================================================
        Unified Sticky Glass Header
        ========================================================================= -->
@@ -38,6 +62,7 @@
       <!-- Desktop Navigation -->
       <nav class="desktop-nav" aria-label="Primary Navigation">
         <ul class="nav-links">
+          <li><a href="#promo" class="nav-link nav-link-promo">Promo <span class="nav-promo-pill">DEAL</span></a></li>
           <li><a href="#about" class="nav-link">About Us</a></li>
           <li><a href="#services" class="nav-link">Services</a></li>
           <li><a href="#clients" class="nav-link">Clients</a></li>
@@ -58,6 +83,7 @@
   <!-- Mobile Navigation Drawer -->
   <aside id="mobile-drawer" class="mobile-drawer" aria-label="Mobile Navigation">
     <ul class="mobile-nav-links">
+      <li><a href="#promo" class="mobile-nav-link mobile-promo-link">🔥 Current Promo (RM1,650)</a></li>
       <li><a href="#about" class="mobile-nav-link">About Us</a></li>
       <li><a href="#services" class="mobile-nav-link">Services</a></li>
       <li><a href="#clients" class="mobile-nav-link">Clients</a></li>
@@ -185,6 +211,207 @@
           <span class="stat-suffix">/7</span>
         </div>
         <span class="stat-label">Dedicated Support</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Featured Promo Section — Refurbished ASUS Business Desktop Bundle
+       ========================================================================= -->
+  <section id="promo" class="promo-section" aria-labelledby="promo-heading">
+    <div class="promo-ambient-glow" aria-hidden="true"></div>
+    <div class="section-container">
+      
+      <!-- Section Header -->
+      <div class="section-header reveal">
+        <div class="promo-tag-pill">
+          <span class="promo-pulse-dot" aria-hidden="true"></span>
+          <span class="promo-tag-text">Exclusive Corporate Promotion</span>
+        </div>
+        <h2 id="promo-heading" class="section-title">
+          Refurbished Business Desktop Workstation Bundle
+        </h2>
+        <p class="section-desc">
+          Equip your enterprise or home office with proven computing performance at unbeatable corporate value. Featuring a 12th-Gen Intel® Core™ i7 processor, 16GB RAM, 1TB NVMe SSD, Windows 11 Pro, and an ASUS 23.8" Full HD monitor.
+        </p>
+      </div>
+
+      <!-- Promo Showcase Grid -->
+      <div class="promo-card-grid reveal">
+        
+        <!-- Visual Column (Image + Lightbox Trigger) -->
+        <div class="promo-visual-wrap">
+          <div class="promo-image-card">
+            <div class="promo-ribbon-badge">
+              <span class="ribbon-text">HOT DEAL</span>
+            </div>
+            <button type="button" class="promo-poster-btn" id="open-promo-lightbox" aria-label="Enlarge ASUS Desktop Promo Flyer">
+              <img src="promo-asus-desktop.jpg" alt="Refurbished ASUS ExpertCenter D7 Series Tower Promotion with 23.8-inch FHD Monitor for RM 1,650" width="853" height="1280" loading="lazy" decoding="async" class="promo-poster-img">
+              <div class="promo-hover-overlay">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  <line x1="11" y1="8" x2="11" y2="14"></line>
+                  <line x1="8" y1="11" x2="14" y2="11"></line>
+                </svg>
+                <span>Click to Enlarge Flyer</span>
+              </div>
+            </button>
+          </div>
+          <p class="promo-visual-hint">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="16" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+            Complete workstation package: Tower, 23.8" Monitor, Keyboard &amp; Mouse included.
+          </p>
+        </div>
+
+        <!-- Specs & Details Column -->
+        <div class="promo-details-wrap">
+          
+          <!-- Header Info -->
+          <div class="promo-item-header">
+            <div class="promo-brand-row">
+              <span class="promo-brand-chip">ASUS</span>
+              <span class="promo-subtitle-chip">In Search of Incredible &bull; ExpertCenter D7 Series</span>
+            </div>
+            <h3 class="promo-product-title">ASUS ExpertCenter D7 Series — Tower</h3>
+            <p class="promo-product-tagline">Reliable Performance for Your Business Operations</p>
+          </div>
+
+          <!-- Pricing Card -->
+          <div class="promo-pricing-banner">
+            <div class="price-meta-label">SPECIAL PROMOTION PRICE</div>
+            <div class="price-val-wrap">
+              <span class="currency">RM</span>
+              <span class="amount">1,650</span>
+              <span class="cents">.00</span>
+              <span class="unit-tag">/ Full Set Bundle</span>
+            </div>
+            <div class="price-badges-row">
+              <span class="benefit-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Ready Stock
+              </span>
+              <span class="benefit-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Pre-Installed Win 11 Pro
+              </span>
+              <span class="benefit-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                1-Year Supplier's Warranty
+              </span>
+            </div>
+          </div>
+
+          <!-- Key Hardware Specs -->
+          <div class="promo-specs-block">
+            <h4 class="specs-heading">Key Specifications</h4>
+            <div class="specs-grid">
+              <div class="spec-card">
+                <div class="spec-icon cpu-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
+                </div>
+                <div class="spec-text">
+                  <span class="spec-label">Processor</span>
+                  <span class="spec-val">Intel® Core™ i7-12700</span>
+                  <span class="spec-sub">12 Cores, 20 Threads, up to 4.90 GHz</span>
+                </div>
+              </div>
+
+              <div class="spec-card">
+                <div class="spec-icon ram-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 9h20M2 15h20M6 9v6M10 9v6M14 9v6M18 9v6"/></svg>
+                </div>
+                <div class="spec-text">
+                  <span class="spec-label">Memory (RAM)</span>
+                  <span class="spec-val">16GB DDR4 U-DIMM</span>
+                  <span class="spec-sub">High-bandwidth dual-channel RAM</span>
+                </div>
+              </div>
+
+              <div class="spec-card">
+                <div class="spec-icon ssd-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+                </div>
+                <div class="spec-text">
+                  <span class="spec-label">Storage</span>
+                  <span class="spec-val">1TB M.2 NVMe™ SSD</span>
+                  <span class="spec-sub">PCIe® 3.0/4.0 high-speed SSD</span>
+                </div>
+              </div>
+
+              <div class="spec-card">
+                <div class="spec-icon gpu-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="3"/><circle cx="7" cy="12" r="1"/><circle cx="17" cy="12" r="1"/></svg>
+                </div>
+                <div class="spec-text">
+                  <span class="spec-label">Graphics (GPU)</span>
+                  <span class="spec-val">NVIDIA® GeForce® GT 1030 2GB</span>
+                  <span class="spec-sub">+ Intel® UHD Graphics (Dual-output)</span>
+                </div>
+              </div>
+
+              <div class="spec-card spec-card-wide">
+                <div class="spec-icon os-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="8" height="8"/><rect x="13" y="3" width="8" height="8"/><rect x="3" y="13" width="8" height="8"/><rect x="13" y="13" width="8" height="8"/></svg>
+                </div>
+                <div class="spec-text">
+                  <span class="spec-label">Operating System</span>
+                  <span class="spec-val">Windows 11 Pro Genuine</span>
+                  <span class="spec-sub">Enterprise security, BitLocker &amp; Remote Desktop ready</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Included Monitor Block -->
+          <div class="promo-monitor-box">
+            <div class="monitor-icon-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <div class="monitor-info">
+              <span class="monitor-badge">INCLUDED MONITOR</span>
+              <h5 class="monitor-model">ASUS C1241Q 23.8-inch Full HD Business Monitor</h5>
+              <p class="monitor-specs">
+                1920 &times; 1080 Resolution &bull; 75Hz Refresh Rate &bull; HDMI 1.4, DisplayPort 1.2 &amp; VGA Triple Display Connectivity
+              </p>
+            </div>
+          </div>
+
+          <!-- Supplier Warranty Terms Box -->
+          <div class="promo-warranty-card">
+            <div class="warranty-card-header">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="warranty-badge-icon"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+              <div>
+                <span class="warranty-title">Supplier's Warranty: 1 Year (Best Effort Basis)</span>
+                <p class="warranty-terms-sub">Full hardware coverage and priority repair support by Omegatec:</p>
+              </div>
+            </div>
+            <ul class="warranty-bullet-list">
+              <li><strong>NVIDIA GeForce GT1030 2GB:</strong> Automatic failover to high-performance onboard graphics in case of card failure.</li>
+              <li><strong>1TB M.2 NVMe PCIe SSD:</strong> Prompt warranty replacement with a 256GB NVMe SSD in the event of drive malfunction.</li>
+              <li><strong>Local Engineering Support:</strong> Direct diagnostic and replacement support from Omegatec Computers Sdn. Bhd. in George Town, Penang.</li>
+            </ul>
+          </div>
+
+          <!-- CTA Action Buttons -->
+          <div class="promo-cta-actions">
+            <a href="https://wa.me/60174201610?text=Hello%20Omegatec,%20I%20would%20like%20to%20order/inquire%20about%20the%20Refurbished%20ASUS%20ExpertCenter%20D7%20Desktop%20Bundle%20(RM1,650)." target="_blank" rel="noopener" class="btn-promo-whatsapp">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+              </svg>
+              Order / Inquire on WhatsApp
+            </a>
+            <a href="#contact" class="btn-promo-quote">
+              Request Official Quotation
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+
+        </div>
       </div>
     </div>
   </section>
@@ -693,6 +920,35 @@
     </div>
   </section>
   </main> <!-- /#main-content -->
+
+  <!-- =========================================================================
+       Promo Poster Lightbox Modal (Accessible Dialog)
+       ========================================================================= -->
+  <div id="promo-lightbox" class="promo-lightbox-modal" role="dialog" aria-modal="true" aria-labelledby="lightbox-title" hidden>
+    <div class="lightbox-overlay" id="lightbox-backdrop"></div>
+    <div class="lightbox-content">
+      <div class="lightbox-header">
+        <h3 id="lightbox-title" class="lightbox-title">ASUS ExpertCenter D7 Promo Flyer</h3>
+        <button type="button" class="lightbox-close-btn" id="close-promo-lightbox" aria-label="Close flyer preview">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="lightbox-body">
+        <img src="promo-asus-desktop.jpg" alt="Refurbished ASUS ExpertCenter D7 Series Tower Promotion Full Flyer with 23.8-inch FHD Monitor for RM 1,650" width="853" height="1280" class="lightbox-img">
+      </div>
+      <div class="lightbox-footer">
+        <a href="https://wa.me/60174201610?text=Hello%20Omegatec,%20I%20would%20like%20to%20order/inquire%20about%20the%20Refurbished%20ASUS%20ExpertCenter%20D7%20Desktop%20Bundle%20(RM1,650)." target="_blank" rel="noopener" class="btn-promo-whatsapp">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+          </svg>
+          Order on WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
 
   <!-- =========================================================================
        Footer
