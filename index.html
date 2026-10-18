@@ -13,41 +13,42 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
 
   <!-- Unified Design System Stylesheet -->
-  <link rel="stylesheet" href="css/styles.css?v=4.0">
+  <link rel="stylesheet" href="css/styles.css?v=5.0">
 </head>
 <body>
 
   <!-- Accessible Skip to Content Link (WCAG 2.4.1) -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- Top Global Announcement Bar (WCAG 2.4.1 & Dismissible) -->
-  <aside id="top-announcement" class="top-announcement-bar" role="region" aria-label="Current Promotion Announcement">
-    <div class="announcement-container">
-      <div class="announcement-content">
-        <span class="announcement-badge">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-          </svg>
-          LIMITED PROMO
-        </span>
-        <p class="announcement-text">
-          Refurbished <strong>ASUS ExpertCenter D7</strong> Desktop (i7-12700 / 16GB / 1TB SSD) + 23.8" FHD Monitor Bundle — <strong>Only RM 1,650!</strong>
-        </p>
-        <a href="#promo" class="announcement-cta">View Offer &rarr;</a>
-      </div>
-      <button type="button" class="announcement-close" id="announcement-close-btn" aria-label="Close promotion announcement">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-      </button>
-    </div>
-  </aside>
-
   <!-- =========================================================================
-       Unified Sticky Glass Header
+       Unified Sticky Glass Header (Encapsulates Top Promo Banner & Nav)
        ========================================================================= -->
   <header class="site-header">
+    <!-- Top Global Announcement Bar (Embedded Seamlessly in Header) -->
+    <aside id="top-announcement" class="top-announcement-bar" role="region" aria-label="Current Promotion Announcement">
+      <div class="announcement-container">
+        <div class="announcement-content">
+          <span class="announcement-badge">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+            LIMITED PROMO
+          </span>
+          <p class="announcement-text">
+            Refurbished <strong>ASUS ExpertCenter D7</strong> Desktop (i7-12700 / 16GB / 1TB SSD) + 23.8" FHD Monitor Bundle — <strong>Only RM 1,650!</strong>
+          </p>
+          <a href="#promo" class="announcement-cta">View Offer &rarr;</a>
+        </div>
+        <button type="button" class="announcement-close" id="announcement-close-btn" aria-label="Close promotion announcement">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Navigation Bar -->
     <div class="header-container">
       <a href="#" class="brand-link" aria-label="Omegatec Homepage">
         <div class="brand-logo-wrap">
@@ -114,14 +115,38 @@
           Empowering Business with <span class="text-gradient">Innovative IT Solutions</span>
         </h1>
         <p class="hero-lead">
-          For over 25 years, Omegatec Computers Sdn. Bhd. has delivered reliable enterprise computer systems, high-speed fiber networking, cybersecurity, cloud infrastructure, and custom software development across Malaysia.
+          Penang-based, 100% Bumiputera-owned IT specialist delivering certified enterprise hardware, high-speed fiber networks, cybersecurity, and cloud infrastructure across Malaysia since 2001.
         </p>
+
+        <!-- Visual Credentials Metrics Strip -->
+        <div class="hero-metrics-strip">
+          <div class="hero-metric-chip">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>MOF Registered</span>
+          </div>
+          <div class="hero-metric-chip">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <span>100% Bumiputera</span>
+          </div>
+          <div class="hero-metric-chip">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>25+ Years Proven</span>
+          </div>
+          <div class="hero-metric-chip">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span>13+ Premier Clients</span>
+          </div>
+        </div>
+
         <div class="hero-actions">
           <a href="https://wa.me/60174201610?text=Hello%20Omegatec,%20I%20would%20like%20to%20inquire%20about%20IT%20solutions." target="_blank" rel="noopener" class="btn-whatsapp-cta">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
               <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
             </svg>
             Chat on WhatsApp
+          </a>
+          <a href="#promo" class="btn-hero-promo">
+            🔥 Workstation Promo <span class="hero-promo-pill">RM1,650</span>
           </a>
           <a href="#services" class="btn-secondary">
             Explore Services
@@ -232,14 +257,14 @@
           Refurbished ASUS ExpertCenter D7 Workstation Bundle
         </h2>
         <p class="section-desc">
-          High-performance enterprise desktop bundle featuring a 12th-Gen Intel® Core™ i7 processor, 16GB RAM, 1TB NVMe SSD, Windows 11 Pro, and an ASUS 23.8" Full HD monitor.
+          High-performance 12th-Gen Core i7 desktop with 16GB RAM, 1TB NVMe SSD, Win 11 Pro &amp; 23.8" FHD monitor included at an unbeatable price.
         </p>
       </div>
 
       <!-- Promo Showcase Grid -->
       <div class="promo-card-grid reveal">
         
-        <!-- Visual Column (Image + Lightbox Trigger) -->
+        <!-- Visual Column (Image + Lightbox Trigger + Bundle Checklist) -->
         <div class="promo-visual-wrap">
           <div class="promo-image-card">
             <div class="promo-ribbon-badge">
@@ -248,30 +273,38 @@
             <button type="button" class="promo-poster-btn" id="open-promo-lightbox" aria-label="Enlarge ASUS Desktop Promo Flyer">
               <img src="promo-asus-desktop.jpg" alt="Refurbished ASUS ExpertCenter D7 Series Tower Promotion with 23.8-inch FHD Monitor for RM 1,650" width="853" height="1280" loading="lazy" decoding="async" class="promo-poster-img">
               <div class="promo-hover-overlay">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                   <circle cx="11" cy="11" r="8"></circle>
                   <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                   <line x1="11" y1="8" x2="11" y2="14"></line>
                   <line x1="8" y1="11" x2="14" y2="11"></line>
                 </svg>
-                <span>Click to Enlarge Flyer</span>
+                <span>Click to Enlarge</span>
               </div>
             </button>
           </div>
-          <p class="promo-visual-hint">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <circle cx="12" cy="12" r="10"></circle>
-              <line x1="12" y1="16" x2="12" y2="12"></line>
-              <line x1="12" y1="8" x2="12.01" y2="8"></line>
-            </svg>
-            Complete workstation package: Tower, 23.8" Monitor, Keyboard &amp; Mouse included.
-          </p>
+
+          <!-- Visual Package Contents Pills -->
+          <div class="promo-bundle-pills">
+            <div class="bundle-pill-item">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/></svg>
+              <span>ASUS ExpertCenter Tower (i7-12700 / 16GB / 1TB)</span>
+            </div>
+            <div class="bundle-pill-item">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              <span>ASUS 23.8" Full HD 75Hz Monitor Included</span>
+            </div>
+            <div class="bundle-pill-item">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M8 12h8M6 16h.01M10 16h.01M14 16h.01M18 16h.01"/></svg>
+              <span>Keyboard &amp; Optical Mouse Included</span>
+            </div>
+          </div>
         </div>
 
         <!-- Specs & Details Column -->
         <div class="promo-details-wrap">
           
-          <!-- Pricing Card (Aligned to Top of Details Column) -->
+          <!-- Pricing Card -->
           <div class="promo-pricing-banner">
             <div class="price-meta-label">SPECIAL PROMOTION PRICE</div>
             <div class="price-val-wrap">
@@ -282,16 +315,16 @@
             </div>
             <div class="price-badges-row">
               <span class="benefit-badge">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                Tower + 23.8" Monitor Included
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Tower + 23.8" Monitor Bundle
               </span>
               <span class="benefit-badge">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
                 Win 11 Pro Licensed
               </span>
               <span class="benefit-badge">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                1-Year Supplier's Warranty
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                1-Year Supplier Warranty
               </span>
             </div>
           </div>
@@ -302,7 +335,7 @@
             <div class="specs-grid">
               <div class="spec-card">
                 <div class="spec-icon cpu-icon">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
                 </div>
                 <div class="spec-text">
                   <span class="spec-label">Processor</span>
@@ -313,7 +346,7 @@
 
               <div class="spec-card">
                 <div class="spec-icon ram-icon">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 9h20M2 15h20M6 9v6M10 9v6M14 9v6M18 9v6"/></svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 9h20M2 15h20M6 9v6M10 9v6M14 9v6M18 9v6"/></svg>
                 </div>
                 <div class="spec-text">
                   <span class="spec-label">Memory (RAM)</span>
@@ -324,18 +357,18 @@
 
               <div class="spec-card">
                 <div class="spec-icon ssd-icon">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
                 </div>
                 <div class="spec-text">
                   <span class="spec-label">Storage</span>
                   <span class="spec-val">1TB M.2 NVMe™ SSD</span>
-                  <span class="spec-sub">PCIe® 3.0/4.0 high-speed SSD</span>
+                  <span class="spec-sub">PCIe® 3.0/4.0 high-speed NVMe</span>
                 </div>
               </div>
 
               <div class="spec-card">
                 <div class="spec-icon gpu-icon">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="3"/><circle cx="7" cy="12" r="1"/><circle cx="17" cy="12" r="1"/></svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="3"/><circle cx="7" cy="12" r="1"/><circle cx="17" cy="12" r="1"/></svg>
                 </div>
                 <div class="spec-text">
                   <span class="spec-label">Graphics (GPU)</span>
@@ -346,7 +379,7 @@
 
               <div class="spec-card spec-card-wide">
                 <div class="spec-icon os-icon">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="8" height="8"/><rect x="13" y="3" width="8" height="8"/><rect x="3" y="13" width="8" height="8"/><rect x="13" y="13" width="8" height="8"/></svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="8" height="8"/><rect x="13" y="3" width="8" height="8"/><rect x="3" y="13" width="8" height="8"/><rect x="13" y="13" width="8" height="8"/></svg>
                 </div>
                 <div class="spec-text">
                   <span class="spec-label">Operating System</span>
@@ -360,13 +393,13 @@
           <!-- Included Monitor Block -->
           <div class="promo-monitor-box">
             <div class="monitor-icon-wrap">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
             </div>
             <div class="monitor-info">
               <span class="monitor-badge">INCLUDED MONITOR</span>
               <h5 class="monitor-model">ASUS C1241Q 23.8-inch Full HD Business Monitor</h5>
               <p class="monitor-specs">
-                1920 &times; 1080 Resolution &bull; 75Hz Refresh Rate &bull; HDMI 1.4, DisplayPort 1.2 &amp; VGA Triple Display Connectivity
+                1920 &times; 1080 &bull; 75Hz &bull; HDMI 1.4, DisplayPort 1.2 &amp; VGA Triple Display Connectivity
               </p>
             </div>
           </div>
@@ -374,30 +407,27 @@
           <!-- Supplier Warranty Terms Box -->
           <div class="promo-warranty-card">
             <div class="warranty-card-header">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="warranty-badge-icon"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
-              <div>
-                <span class="warranty-title">Supplier's Warranty: 1 Year (Best Effort Basis)</span>
-                <p class="warranty-terms-sub">Full hardware coverage and priority repair support by Omegatec:</p>
-              </div>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="warranty-badge-icon"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+              <span class="warranty-title">1-Year Supplier Warranty (Best Effort Basis)</span>
             </div>
             <ul class="warranty-bullet-list">
-              <li><strong>NVIDIA GeForce GT1030 2GB:</strong> Automatic failover to high-performance onboard graphics in case of card failure.</li>
-              <li><strong>1TB M.2 NVMe PCIe SSD:</strong> Prompt warranty replacement with a 256GB NVMe SSD in the event of drive malfunction.</li>
-              <li><strong>Local Engineering Support:</strong> Direct diagnostic and replacement support from Omegatec Computers Sdn. Bhd. in George Town, Penang.</li>
+              <li><strong>GPU Protection:</strong> Instant failover to high-performance onboard graphics if needed.</li>
+              <li><strong>Storage Swap:</strong> Prompt replacement with 256GB NVMe SSD in the event of drive malfunction.</li>
+              <li><strong>Local Support:</strong> Direct diagnostic and repair from Omegatec in George Town, Penang.</li>
             </ul>
           </div>
 
           <!-- CTA Action Buttons -->
           <div class="promo-cta-actions">
             <a href="https://wa.me/60174201610?text=Hello%20Omegatec,%20I%20would%20like%20to%20order/inquire%20about%20the%20Refurbished%20ASUS%20ExpertCenter%20D7%20Desktop%20Bundle%20(RM1,650)." target="_blank" rel="noopener" class="btn-promo-whatsapp">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
               </svg>
-              Order / Inquire on WhatsApp
+              Order on WhatsApp
             </a>
             <a href="#contact" class="btn-promo-quote">
-              Request Official Quotation
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              Request Quotation
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </a>
           </div>
 
@@ -407,28 +437,19 @@
   </section>
 
   <!-- =========================================================================
-       About Us Section
+       About Us Section — High-Impact Credentials Grid
        ========================================================================= -->
   <section id="about">
     <div class="section-container">
       <div class="about-grid">
         <div class="about-content reveal">
           <span class="section-subtitle">Who We Are</span>
-          <h2 class="section-title">Your Trusted Technology Partner in Malaysia</h2>
+          <h2 class="section-title">25 Years of Proven Enterprise IT Excellence</h2>
           <p>
-            Omegatec Computers Sdn. Bhd. was established on <strong>August 3, 2001</strong> with a firm commitment to delivering innovative, reliable, and high-performance IT solutions. Based in George Town, Penang, we have grown into a cornerstone technology partner for government agencies, universities, and commercial enterprises.
-          </p>
-          <p>
-            Authorised with official <strong>BUMIPUTERA status</strong> and registered with <strong>KEMENTERIAN KEWANGAN MALAYSIA (Ministry of Finance Malaysia)</strong>, Omegatec Computers provides end-to-end computer-related goods and services with an unwavering pursuit of Total Customer Satisfaction.
+            Established in George Town, Penang in 2001, Omegatec Computers Sdn. Bhd. is an MOF-registered, 100% Bumiputera technology specialist providing turnkey hardware deployment, campus networking, cybersecurity, and mission-critical system integration across Malaysia.
           </p>
 
           <div class="about-features">
-            <div class="about-feature-item">
-              <svg class="about-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              <span class="about-feature-text">Certified IT Engineers &amp; Specialists</span>
-            </div>
             <div class="about-feature-item">
               <svg class="about-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                 <polyline points="20 6 9 17 4 12"></polyline>
@@ -439,13 +460,19 @@
               <svg class="about-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                 <polyline points="20 6 9 17 4 12"></polyline>
               </svg>
-              <span class="about-feature-text">High-Speed Networking &amp; Fiber Optics</span>
+              <span class="about-feature-text">100% Bumiputera Owned &amp; Certified</span>
             </div>
             <div class="about-feature-item">
               <svg class="about-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                 <polyline points="20 6 9 17 4 12"></polyline>
               </svg>
-              <span class="about-feature-text">Advanced Cybersecurity &amp; AI Solutions</span>
+              <span class="about-feature-text">Certified IT Engineers &amp; Fiber Splicers</span>
+            </div>
+            <div class="about-feature-item">
+              <svg class="about-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span class="about-feature-text">Rapid On-Site Maintenance &amp; SLAs</span>
             </div>
           </div>
         </div>
@@ -453,38 +480,51 @@
         <div class="about-cards-wrap reveal">
           <div class="credential-card">
             <div class="credential-icon-wrap">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
                 <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
               </svg>
             </div>
             <div class="credential-info">
               <h4>Ministry of Finance Registered</h4>
-              <p>Fully compliant and certified supplier for state, federal, and municipal government procurement.</p>
+              <p>Certified vendor for state, federal, and municipal government procurement tenders.</p>
             </div>
           </div>
 
           <div class="credential-card">
             <div class="credential-icon-wrap">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
               </svg>
             </div>
             <div class="credential-info">
-              <h4>Bumiputera Status Certified</h4>
-              <p>Recognised enterprise delivering premier IT products, structured cablings, and specialized consulting.</p>
+              <h4>100% Bumiputera Status</h4>
+              <p>Recognised enterprise partner for public universities, state councils &amp; GLCs.</p>
             </div>
           </div>
 
           <div class="credential-card">
             <div class="credential-icon-wrap">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <div class="credential-info">
+              <h4>25+ Years Proven Track Record</h4>
+              <p>Established August 3, 2001 with decades of dependable enterprise delivery.</p>
+            </div>
+          </div>
+
+          <div class="credential-card">
+            <div class="credential-icon-wrap">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
               </svg>
             </div>
             <div class="credential-info">
               <h4>Total Customer Satisfaction</h4>
-              <p>Decades-long reputation in Northern Malaysia for dependable after-sales maintenance and rapid support.</p>
+              <p>Northern Malaysia's trusted team for rapid after-sales service and genuine parts.</p>
             </div>
           </div>
         </div>
@@ -493,7 +533,7 @@
   </section>
 
   <!-- =========================================================================
-       Services Section — 6 Pillars
+       Services Section — 6 Pillars (Visual & Scannable)
        ========================================================================= -->
   <section id="services">
     <div class="section-container">
@@ -501,7 +541,7 @@
         <span class="section-subtitle">Our Expertise</span>
         <h2 class="section-title">Comprehensive 6-Pillar IT Solutions</h2>
         <p class="section-desc">
-          From mission-critical hardware supply to sophisticated artificial intelligence pipelines, our certified engineering team powers your digital transformation.
+          Certified engineering and system integration powering digital infrastructure across Malaysia.
         </p>
       </div>
 
@@ -509,7 +549,7 @@
         <!-- Pillar 1: Hardware & Sales -->
         <div class="service-card reveal">
           <div class="service-icon-box">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
               <line x1="8" y1="21" x2="16" y2="21"></line>
               <line x1="12" y1="17" x2="12" y2="21"></line>
@@ -517,19 +557,19 @@
           </div>
           <h3 class="service-title">Computer Sales &amp; Hardware</h3>
           <p class="service-desc">
-            Authorized supply of enterprise workstations, high-performance laptops, server racks, and peripherals from industry-leading manufacturers.
+            Authorized supply of enterprise workstations, high-performance laptops, server racks, and peripherals.
           </p>
           <ul class="service-highlights">
-            <li>Enterprise desktop &amp; server procurement</li>
-            <li>Custom PC builds &amp; lab configurations</li>
-            <li>Component upgrades &amp; warranty management</li>
+            <li>Enterprise desktop &amp; server fleets</li>
+            <li>Custom PC builds &amp; lab setups</li>
+            <li>Direct component warranty coverage</li>
           </ul>
         </div>
 
         <!-- Pillar 2: Networking & Fiber Optics -->
         <div class="service-card reveal">
           <div class="service-icon-box">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <rect x="16" y="16" width="6" height="6" rx="1"></rect>
               <rect x="2" y="16" width="6" height="6" rx="1"></rect>
               <rect x="9" y="2" width="6" height="6" rx="1"></rect>
@@ -539,87 +579,87 @@
           </div>
           <h3 class="service-title">Networking &amp; Fiber Optics</h3>
           <p class="service-desc">
-            Complete structured cabling, fiber optic termination, switch configurations, and secure multi-building local &amp; wide area network design.
+            Complete structured cabling, fiber optic termination, switch configurations, and secure campus networks.
           </p>
           <ul class="service-highlights">
             <li>Fiber optic splicing &amp; OTDR testing</li>
             <li>Managed wireless access point mesh</li>
-            <li>VLAN segmentation &amp; VPN gateways</li>
+            <li>VLAN segmentation &amp; secure VPNs</li>
           </ul>
         </div>
 
         <!-- Pillar 3: Cloud & Infrastructure -->
         <div class="service-card reveal">
           <div class="service-icon-box">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
             </svg>
           </div>
           <h3 class="service-title">Cloud &amp; Infrastructure</h3>
           <p class="service-desc">
-            Scalable cloud hosting, hybrid migration, automated backup management, and high-availability database administration.
+            Scalable cloud hosting, hybrid migration, automated backup management, and database tuning.
           </p>
           <ul class="service-highlights">
             <li>Hybrid cloud deployment &amp; migrations</li>
-            <li>Disaster recovery &amp; automated snapshots</li>
-            <li>Relational &amp; enterprise database tuning</li>
+            <li>Automated snapshots &amp; disaster recovery</li>
+            <li>Enterprise database administration</li>
           </ul>
         </div>
 
         <!-- Pillar 4: Cybersecurity & AI/ML -->
         <div class="service-card reveal">
           <div class="service-icon-box">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
               <path d="m9 12 2 2 4-4"></path>
             </svg>
           </div>
           <h3 class="service-title">Cybersecurity &amp; AI Solutions</h3>
           <p class="service-desc">
-            Proactive threat monitoring, endpoint security, firewall governance, and machine learning models tailored to business intelligence.
+            Proactive threat monitoring, endpoint security, firewall governance, and custom machine learning pipelines.
           </p>
           <ul class="service-highlights">
             <li>Next-gen firewall &amp; intrusion prevention</li>
-            <li>Endpoint protection &amp; vulnerability audits</li>
-            <li>Machine learning (ML) data analytics</li>
+            <li>Endpoint protection &amp; security audits</li>
+            <li>Business intelligence &amp; ML models</li>
           </ul>
         </div>
 
         <!-- Pillar 5: Custom Software & Web -->
         <div class="service-card reveal">
           <div class="service-icon-box">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <polyline points="16 18 22 12 16 6"></polyline>
               <polyline points="8 6 2 12 8 18"></polyline>
             </svg>
           </div>
           <h3 class="service-title">System &amp; Web Development</h3>
           <p class="service-desc">
-            Bespoke web applications, cross-platform mobile apps, customer portals, and internal enterprise automation systems.
+            Bespoke web applications, cross-platform mobile apps, customer portals, and internal business automation.
           </p>
           <ul class="service-highlights">
             <li>Modern responsive corporate websites</li>
             <li>Custom ERP, CRM &amp; inventory systems</li>
-            <li>RESTful API &amp; legacy system integration</li>
+            <li>RESTful API &amp; system integrations</li>
           </ul>
         </div>
 
         <!-- Pillar 6: Training & Consultation -->
         <div class="service-card reveal">
           <div class="service-icon-box">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
               <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
             </svg>
           </div>
           <h3 class="service-title">IT Training &amp; Consultation</h3>
           <p class="service-desc">
-            Strategic IT advisory, computer-aided training programs, digital capability workshops, and IT infrastructure health audits.
+            Strategic IT advisory, computer-aided training programs, digital workshops, and health audits.
           </p>
           <ul class="service-highlights">
-            <li>Technical staff &amp; software user training</li>
-            <li>IT procurement &amp; tender advisory</li>
-            <li>Strategic IT roadmap &amp; governance</li>
+            <li>Technical staff &amp; user capability training</li>
+            <li>Procurement tender preparation &amp; advisory</li>
+            <li>Strategic technology roadmap &amp; governance</li>
           </ul>
         </div>
       </div>
@@ -1028,6 +1068,6 @@
   </div>
 
   <!-- JavaScript Animations Controller -->
-  <script src="js/animations.js?v=4.0"></script>
+  <script src="js/animations.js?v=5.0"></script>
 </body>
 </html>
