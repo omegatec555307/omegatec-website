@@ -385,9 +385,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // Check saved state
   if (localStorage.getItem(ANNOUNCEMENT_STORAGE_KEY) === 'true') {
     document.body.classList.add('announcement-closed');
-    if (announcementBar) {
-      announcementBar.style.display = 'none';
-    }
   }
 
   if (announcementCloseBtn && announcementBar) {
@@ -398,9 +395,6 @@ document.addEventListener('DOMContentLoaded', () => {
       } catch (e) {
         console.warn('LocalStorage error:', e);
       }
-      setTimeout(() => {
-        announcementBar.style.display = 'none';
-      }, 300);
     });
   }
 
@@ -469,15 +463,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // =========================================================================
   function getStickyHeaderOffset() {
     const header = document.querySelector('.site-header');
-    const announcement = document.getElementById('top-announcement');
-    let offset = 0;
     if (header && window.getComputedStyle(header).position === 'fixed') {
-      offset += header.offsetHeight;
+      return header.offsetHeight;
     }
-    if (announcement && announcement.offsetParent !== null && !document.body.classList.contains('announcement-closed')) {
-      offset += announcement.offsetHeight;
-    }
-    return offset;
+    return 0;
   }
 
   function smoothScrollToElement(el) {
